@@ -3,9 +3,12 @@ package com.unuse.diary.service;
 import com.alibaba.fastjson.JSON;
 import com.unuse.diary.api.Diary;
 import com.unuse.diary.mapper.DiaryMapper;
+import com.unuse.user.api.UserDataResult;
+import com.unuse.util.HttpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -52,4 +55,5 @@ public class DiaryServerService {
 
         diaryMapper.updateDiary(diary);
     }
+
 }

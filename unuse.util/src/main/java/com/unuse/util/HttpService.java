@@ -18,7 +18,7 @@ public class HttpService {
 
 	private static final MediaType MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=utf-8");
 
-	private static final String URLPath = "http://127.0.0.1:8080/unuse.server";
+	private static String URLPath = "http://127.0.0.1:8080/unuse.server";
 
 	private static String token = null;
 
@@ -34,17 +34,19 @@ public class HttpService {
 		return URLPath;
 	}
 
-	public static void setURLPath(String urlPath) {}
+	public static void setURLPath(String urlPath) {
+		HttpService.URLPath = urlPath;
+	}
 
-	public <T> T runService(Object param, String api, Class<T> classOfT) {
+	public static <T> T runService(Object param, String api, Class<T> classOfT) {
 		return runService(param, api, (Type) classOfT, false);
 	}
 	
-	public <T> T runService(String param, String api, Class<T> classOfT) {
+	public static <T> T runService(String param, String api, Class<T> classOfT) {
 		return runService(param, api, (Type) classOfT, true);
 	}
 
-	public <T> T runService(Map<String, Object> param, String api, Class<T> classOfT, boolean isGet) {
+	public static <T> T runService(Map<String, Object> param, String api, Class<T> classOfT, boolean isGet) {
 		String requestParam = null;
 		if (isGet) {
 			StringBuffer bf = new StringBuffer();
@@ -60,7 +62,7 @@ public class HttpService {
 		return runService(requestParam, null, param, api, (Type) classOfT, isGet);
 	}
 	
-	private <T> T runService(Object param, String api, Type classOfT, boolean isGet) {
+	private static <T> T runService(Object param, String api, Type classOfT, boolean isGet) {
 		String requestParam = null;
 		Object requestObject = null;
 		
@@ -75,7 +77,7 @@ public class HttpService {
 		return runService(requestParam, requestObject, null, api, classOfT, isGet);
 	}
 
-	private <T> T runService(String requestParam, Object requestObject, Map<String, Object> param, String api, Type resClass, boolean isGet) {
+	private static <T> T runService(String requestParam, Object requestObject, Map<String, Object> param, String api, Type resClass, boolean isGet) {
 		T res = null;
 		
 		if (null == client) {
@@ -142,9 +144,10 @@ public class HttpService {
 				throw new IOException("服务器错误: " + response);
 			}
 
-			System.out.println(response.body().string());
+			String responseBody = response.body().string();
+			System.out.println(responseBody);
 			
-			res = JSON.parseObject(response.body().string(), resClass);
+			res = JSON.parseObject(responseBody, resClass);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
