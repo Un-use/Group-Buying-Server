@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unuse.mall.mapper.MallMapper">
+
+	<resultMap id="MallOrderResultMap" type="MallOrder">
+		<id column="oid" property="oid" jdbcType="BIGINT"/>
+		<result column="uid" property="uid" jdbcType="BIGINT"/>
+		<result column="gidListJson" property="gidListJson" jdbcType="VARCHAR"/>
+		<result column="type" property="type" jdbcType="TINYINT"/>
+		<result column="status" property="status" jdbcType="TINYINT"/>
+		<result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+		<result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<sql id="Mall_Order_Column_List">
+        `oid`, `uid`, `gidListJson`, `type`, `status`, `createTime`, `updateTime`
+    </sql>
+
+	<select id="getMallOrderListByUid" resultMap="MallOrderResultMap">
+		SELECT
+		<include refid="Mall_Order_Column_List"/>
+		FROM mall_order
+		WHERE `uid` = #{uid}
+		<if test="null != type">
+			AND `type` = #{type}
+		</if>
+		<if test="status != null">
+			AND `status` = #{status}
+		</if>
+		ORDER BY `oid` DESC
+		<if test="null != start">
+			LIMIT #{start}, #{count}
+		</if>
+	</select>
+
+	<select id="getMallOrderListCountByUid" resultType="Integer">
+		SELECT
+		COUNT(*)
+		FROM mall_order
+		WHERE `uid` = #{uid}
+		<if test="null != type">
+			AND `type` = #{type}
+		</if>
+		<if test="status != null">
+			AND `status` = #{status}
+		</if>
+	</select>
+
+	<select id="getMallOrderByOid" resultMap="MallOrderResultMap">
+		SELECT
+		<include refid="Mall_Order_Column_List"/>
+		FROM mall_order
+		WHERE `oid` = #{oid}
+	</select>
+
+	<insert id="addMallOrder" parameterType="MallOrder" useGeneratedKeys="true" keyProperty="oid">
+    INSERT INTO mall_order (`uid`, `gidListJson`, `type`, `status`, `createTime`, `updateTime`)
+                    VALUES (#{uid}, #{gidListJson}, #{type}, #{status}, sysDate(), sysDate())
+  </insert>
+
+	<update id="updateMallOrder" parameterType="MallOrder">
+		UPDATE mall_order
+		<set>
+			<if test="gidListJson != null">
+				`gidListJson` = #{gidListJson},
+			</if>
+			<if test="status != null">
+				`status` = #{status},
+			</if>
+			`updateTime` = sysDate(),
+		</set>
+		WHERE `oid` = #{oid}
+	</update>
+
+
+</mapper>

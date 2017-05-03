@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unuse.mall.mapper.MallMapper">
+
+	<resultMap id="MallGoodsResultMap" type="MallGoods">
+		<id column="gid" property="gid" jdbcType="BIGINT"/>
+		<result column="oid" property="oid" jdbcType="BIGINT"/>
+		<result column="uid" property="uid" jdbcType="BIGINT"/>
+        <result column="itemId" property="itemId" jdbcType="BIGINT"/>
+        <result column="userAddressId" property="userAddressId" jdbcType="INTEGER"/>
+		<result column="skuListJson" property="skuListJson" jdbcType="VARCHAR"/>
+		<result column="number" property="number" jdbcType="INTEGER"/>
+		<result column="status" property="status" jdbcType="TINYINT"/>
+		<result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+		<result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<sql id="Mall_Goods_Column_List">
+        `gid`, `oid`, `uid`, `itemId`, `userAddressId`, `skuListJson`, `number`, `status`, `createTime`, `updateTime`
+    </sql>
+
+	<select id="getMallGoodsListByOid" resultMap="MallGoodsResultMap">
+		SELECT
+		<include refid="Mall_Goods_Column_List"/>
+		FROM mall_goods
+		WHERE `oid` = #{oid}
+		<if test="status != null">
+			AND `status` = #{status},
+		</if>
+		ORDER BY `gid` DESC
+		<if test="null != start">
+			LIMIT #{start}, #{count}
+		</if>
+	</select>
+
+	<select id="getMallGoodsListCountByOid" resultType="Integer">
+		SELECT
+		COUNT(*)
+		FROM mall_goods
+		WHERE `oid` = #{oid}
+		<if test="status != null">
+			AND `status` = #{status},
+		</if>
+	</select>
+
+	<select id="getMallGoodsByGid" resultMap="MallGoodsResultMap">
+		SELECT
+		<include refid="Mall_Goods_Column_List"/>
+		FROM mall_goods
+		WHERE `gid` = #{gid}
+	</select>
+
+	<insert id="addMallGoods" parameterType="MallGoods" useGeneratedKeys="true" keyProperty="gid">
+    INSERT INTO mall_goods (`uid`, `oid`, `itemId`, `userAddressId`, `skuListJson`, `number`, `createTime`, `updateTime`)
+                    VALUES (#{uid}, #{oid}, #{itemId}, #{userAddressId}, #{skuListJson}, #{number}, sysDate(), sysDate())
+  </insert>
+
+	<update id="updateMallGoods" parameterType="MallGoods">
+		UPDATE mall_goods
+		<set>
+			<if test="skuListJson != null">
+				`skuListJson` = #{skuListJson},
+			</if>
+			<if test="number != null">
+				`number` = #{number},
+			</if>
+			<if test="status != null">
+				`status` = #{status},
+			</if>
+			`updateTime` = sysDate(),
+		</set>
+		WHERE `gid` = #{gid}
+	</update>
+
+
+</mapper>

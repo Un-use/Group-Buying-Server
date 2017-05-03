@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unuse.mall.mapper.MallMapper">
+
+	<resultMap id="MallSetResultMap" type="MallSet">
+		<id column="sid" property="sid" jdbcType="INTEGER"/>
+		<result column="title" property="title" jdbcType="VARCHAR"/>
+		<result column="content" property="content" jdbcType="VARCHAR"/>
+		<result column="itemIdListJson" property="itemIdListJson" jdbcType="VARCHAR"/>
+		<result column="status" property="status" jdbcType="INTEGER"/>
+		<result column="startTime" property="startTime" jdbcType="TIMESTAMP"/>
+		<result column="endTime" property="endTime" jdbcType="TIMESTAMP"/>
+		<result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+		<result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<sql id="Mall_Set_Column_List">
+    	`sid`, `title`, `content`, `itemIdListJson`, `status`, `startTime`, `endTime`, `createTime`, `updateTime`
+  	</sql>
+
+	<select id="getMallSetList" resultMap="MallSetResultMap">
+		SELECT
+		<include refid="Mall_Set_Column_List"/>
+		FROM mall_set
+		WHERE 1 = 1
+		<if test="null != status">
+			AND `status` = #{status}
+		</if>
+		<if test="null != nowTime">
+			<![CDATA[
+			AND `startTime` <= #{nowTime}
+			AND `endTime` >= #{nowTime}
+			]]>
+		</if>
+		ORDER BY `sid` DESC
+		<if test="null != start">
+			LIMIT #{start}, #{count}
+		</if>
+	</select>
+
+	<select id="getMallSetListCount" resultType="Integer">
+		SELECT
+		COUNT(*)
+		FROM mall_set
+		WHERE 1 = 1
+		<if test="null != status">
+			AND `status` = #{status}
+		</if>
+	</select>
+
+	<select id="getMallSetBySid" resultMap="MallSetResultMap">
+		SELECT
+		<include refid="Mall_Set_Column_List"/>
+		FROM mall_set
+		WHERE `sid` = #{sid}
+	</select>
+
+	<insert id="addMallSet" parameterType="MallSet">
+		INSERT INTO mall_set (`title`, `content`, `itemIdListJson`, `startTime`, `endTime`, `createTime`, `updateTime`)
+					  VALUES (#{title}, #{content}, #{itemIdListJson}, #{startTime}, #{endTime}, sysDate(), sysDate())
+	</insert>
+
+	<update id="updateMallSet" parameterType="MallSet">
+		UPDATE mall_set
+		<set>
+			<if test="title != null">
+				`title` = #{title},
+			</if>
+			<if test="content != null">
+				`content` = #{content},
+			</if>
+			<if test="itemIdListJson != null">
+				`itemIdListJson` = #{itemIdListJson},
+			</if>
+			<if test="startTime != null">
+				`startTime` = #{startTime},
+			</if>
+			<if test="endTime != null">
+				`endTime` = #{endTime},
+			</if>
+			`updateTime` = sysDate(),
+		</set>
+		WHERE `sid` = #{sid}
+	</update>
+
+
+</mapper>

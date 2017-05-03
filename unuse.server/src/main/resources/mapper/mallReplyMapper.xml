@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unuse.mall.mapper.MallMapper">
+
+	<resultMap id="MallReplyResultMap" type="MallReply">
+		<id column="replyId" property="replyId" jdbcType="BIGINT"/>
+		<result column="commentId" property="commentId" jdbcType="BIGINT"/>
+		<result column="itemId" property="itemId" jdbcType="BIGINT"/>
+		<result column="toUid" property="toUid" jdbcType="BIGINT"/>
+		<result column="fromUid" property="fromUid" jdbcType="BIGINT"/>
+		<result column="content" property="content" jdbcType="VARCHAR"/>
+		<result column="pictureListJson" property="pictureListJson" jdbcType="VARCHAR"/>
+		<result column="status" property="status" jdbcType="TINYINT"/>
+		<result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+		<result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<sql id="Mall_Reply_Column_List">
+    	`replyId`, `commentId`, `itemId`, `toUid`, `fromUid`, `content`, `pictureListJson`, `status`, `createTime`, `updateTime`
+	</sql>
+
+	<select id="getMallReplyListByCommentId" resultMap="MallReplyResultMap">
+		SELECT
+		<include refid="Mall_Reply_Column_List"/>
+		FROM mall_reply
+		WHERE `commentId` = #{commentId}
+		ORDER BY `replyId` DESC
+		<if test="start != null">
+			LIMIT #{start}, #{count}
+		</if>
+	</select>
+
+	<select id="getMallReplyListCountByCommentId" resultType="Integer">
+		SELECT
+		COUNT(*)
+		FROM mall_reply
+		WHERE `commentId` = #{commentId}
+	</select>
+
+	<select id="getMallReplyByReplyId" resultMap="MallReplyResultMap">
+		SELECT
+		<include refid="Mall_Reply_Column_List"/>
+		FROM mall_reply
+		WHERE `replyId` = #{replyId}
+	</select>
+
+	<insert id="addMallReply" parameterType="MallReply">
+		INSERT INTO mall_reply (`commentId`, `itemId`, `toUid`, `fromUid`, `content`, `pictureListJson`, `createTime`, `updateTime`)
+						VALUES (#{commentId}, #{itemId}, #{toUid}, #{fromUid}, #{content}, #{pictureListJson}, sysDate(), sysDate())
+	</insert>
+
+	<update id="updateMallReply" parameterType="MallReply">
+		UPDATE mall_reply
+		<set>
+			<if test="content != null">
+				`content` = #{content},
+			</if>
+			<if test="pictureListJson != null">
+				`pictureListJson` = #{pictureListJson},
+			</if>
+			<if test="status != null">
+				`status` = #{status},
+			</if>
+			`updateTime` = sysDate(),
+		</set>
+		WHERE `replyId` = #{replyId}
+	</update>
+
+
+</mapper>

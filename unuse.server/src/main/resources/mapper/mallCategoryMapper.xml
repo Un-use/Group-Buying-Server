@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unuse.mall.mapper.MallMapper">
+
+	<resultMap id="MallCategoryResultMap" type="MallCategory">
+		<id column="cid" property="cid" jdbcType="INTEGER"/>
+		<result column="parentCid" property="parentCid" jdbcType="INTEGER"/>
+		<result column="title" property="title" jdbcType="VARCHAR"/>
+		<result column="level" property="level" jdbcType="TINYINT"/>
+		<result column="status" property="status" jdbcType="TINYINT"/>
+		<result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+		<result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<sql id="Mall_Category_Column_List">
+    	`cid`, `parentCid`, `title`, `level`, `status`, `createTime`, `updateTime`
+  	</sql>
+
+	<select id="getMallCategoryList" resultMap="MallCategoryResultMap">
+		SELECT
+		<include refid="Mall_Category_Column_List"/>
+		FROM mall_category
+		WHERE 1 = 1
+		<if test="null != level">
+			AND `level` = #{level}
+		</if>
+		<if test="null != status">
+			AND `status` = #{status}
+		</if>
+	</select>
+
+	<select id="getMallCategoryByCid" resultMap="MallCategoryResultMap" parameterType="Integer">
+		SELECT
+		<include refid="Mall_Category_Column_List"/>
+		FROM mall_category
+		WHERE `cid` = #{cid,jdbcType=INTEGER}
+	</select>
+
+	<insert id="addMallCategory" parameterType="MallCategory">
+		INSERT INTO mall_category (`parentCid`, `title`, `level`, `createTime`, `updateTime`)
+						  VALUES (#{parentCid}, #{title}, #{level}, sysDate(), sysDate())
+  	</insert>
+
+	<update id="updateMallCategory" parameterType="MallCategory">
+		UPDATE mall_category
+		<set>
+			<if test="title != null">
+				`title` = #{title},
+			</if>
+			<if test="parentCid != null">
+				`parentCid` = #{parentCid},
+			</if>
+			<if test="level != null">
+				`level` = #{level},
+			</if>
+			<if test="status != null">
+				`status` = #{status},
+			</if>
+			`updateTime` = sysDate(),
+		</set>
+		WHERE `cid` = #{cid}
+	</update>
+
+
+</mapper>

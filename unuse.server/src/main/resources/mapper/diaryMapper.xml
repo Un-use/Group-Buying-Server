@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unuse.diary.mapper.DiaryMapper">
+
+	<resultMap id="DiaryResultMap" type="Diary">
+		<id column="id" property="id" jdbcType="INTEGER"/>
+		<result column="uid" property="uid" jdbcType="BIGINT"/>
+		<result column="title" property="title" jdbcType="VARCHAR"/>
+		<result column="content" property="content" jdbcType="VARCHAR"/>
+		<result column="picListJson" property="picListJson" jdbcType="VARCHAR"/>
+		<result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+		<result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<sql id="Diary_Column_List">
+    	`id`, `uid`, `title`, `content`, `picListJson`, `createTime`, `updateTime`
+	</sql>
+
+	<select id="getDiaryListByStartId" resultMap="DiaryResultMap" parameterType="Integer">
+		SELECT
+		<include refid="Diary_Column_List"/>
+		FROM `diary`
+		WHERE 1 = 1
+		<if test="null != startId">
+			AND `id` &lt; #{startId, jdbcType=INTEGER}
+		</if>
+		<if test="null != uid">
+			AND `uid` = #{uid, jdbcType=BIGINT}
+		</if>
+		ORDER BY `id` DESC
+		LIMIT 20
+	</select>
+
+	<insert id="addDiary" parameterType="Diary">
+		INSERT INTO `diary`(`title`, `uid`, `content`, `picListJson`, `createTime`, `updateTime`)
+					VALUES (#{title}, #{uid}, #{content}, #{picListJson}, sysDate(), sysDate())
+	</insert>
+
+	<update id="updateDiary" parameterType="Diary">
+		UPDATE `diary` SET `updateTime` = sysDate()
+		<if test="null != title">
+			, `title` = #{title, jdbcType=VARCHAR}
+		</if>
+		<if test="null != content">
+			, `content` = #{content, jdbcType=VARCHAR}
+		</if>
+		<if test="null != picListJson">
+			, `picListJson` = #{picListJson, jdbcType=VARCHAR}
+		</if>
+		WHERE `id` = #{id, jdbcType=INTEGER}
+	</update>
+
+</mapper>

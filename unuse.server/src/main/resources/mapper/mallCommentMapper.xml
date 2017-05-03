@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unuse.mall.mapper.MallMapper">
+
+	<resultMap id="MallCommentResultMap" type="MallComment">
+		<id column="commentId" property="commentId" jdbcType="BIGINT"/>
+		<result column="itemId" property="itemId" jdbcType="BIGINT"/>
+		<result column="uid" property="uid" jdbcType="BIGINT"/>
+		<result column="content" property="content" jdbcType="VARCHAR"/>
+		<result column="pictureListJson" property="pictureListJson" jdbcType="VARCHAR"/>
+		<result column="star" property="star" jdbcType="INTEGER"/>
+		<result column="status" property="status" jdbcType="TINYINT"/>
+		<result column="disabled" property="disabled" jdbcType="TINYINT"/>
+		<result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+		<result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<sql id="Mall_Comment_Column_List">
+    	`commentId`, `itemId`, `uid`, `content`, `pictureListJson`, `star`, `status`, `disabled`, `createTime`, `updateTime`
+  	</sql>
+
+	<select id="getMalCommentListByItemId" resultMap="MallCommentResultMap">
+		SELECT
+		<include refid="Mall_Comment_Column_List"/>
+		FROM mall_comment
+		WHERE `itemId` = #{itemId}
+		<if test="status != null">
+			AND `status` = #{status}
+		</if>
+		<if test="disabled != null">
+			AND `disabled` = #{disabled}
+		</if>
+		ORDER BY `commentId` DESC
+		<if test="start != null">
+			LIMIT #{start}, #{count}
+		</if>
+	</select>
+
+	<select id="getMallCommentListCountByItemId" resultType="Integer">
+		SELECT
+		COUNT(*)
+		FROM mall_comment
+		WHERE `itemId` = #{itemId}
+		<if test="status != null">
+			AND `status` = #{status}
+		</if>
+		<if test="disabled != null">
+			AND `disabled` = #{disabled}
+		</if>
+	</select>
+
+	<select id="getMalCommentByCommentId" resultMap="MallCommentResultMap">
+		SELECT
+		<include refid="Mall_Comment_Column_List"/>
+		FROM mall_comment
+		WHERE `commentId` = #{commentId}
+	</select>
+
+	<insert id="addMallComment" parameterType="MallComment">
+		INSERT INTO mall_comment (`itemId`, `uid`, `content`, `pictureListJson`, `createTime`, `updateTime`)
+						  VALUES (#{itemId}, #{uid}, #{content}, #{pictureListJson}, sysDate(), sysDate())
+  	</insert>
+
+	<update id="updateMallComment" parameterType="MallComment">
+		UPDATE mall_comment
+		<set>
+			<if test="content != null">
+				`content` = #{content},
+			</if>
+			<if test="pictureListJson != null">
+				`pictureListJson` = #{pictureListJson},
+			</if>
+			<if test="star != null">
+				`star` = #{star},
+			</if>
+			<if test="status != null">
+				`status` = #{status},
+			</if>
+			<if test="disabled != null">
+				`disabled` = #{disabled},
+			</if>
+			`updateTime` = sysDate(),
+		</set>
+		WHERE `commentId` = #{commentId}
+	</update>
+
+
+</mapper>

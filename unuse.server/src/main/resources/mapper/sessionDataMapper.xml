@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unuse.auth.mapper.AuthMapper">
+
+	<resultMap id="SessionDataResultMap" type="SessionData">
+		<id column="id" property="id" jdbcType="BIGINT"/>
+		<result column="uid" property="uid" jdbcType="BIGINT"/>
+		<result column="token" property="token" jdbcType="CHAR"/>
+		<result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<sql id="SessionData_Column_List">
+    	`id`, `uid`, `token`, `createTime`
+	</sql>
+
+	<select id="getSessionDataByToken" resultMap="SessionDataResultMap" parameterType="String">
+		select
+		<include refid="SessionData_Column_List"/>
+		from session_data
+		where `token` = #{token}
+	</select>
+
+	<insert id="addSessionData" parameterType="SessionData">
+		insert into session_data (`uid`, `token`, `createTime`)
+		VALUES (#{uid}, #{token}, sysDate())
+	</insert>
+
+
+</mapper>

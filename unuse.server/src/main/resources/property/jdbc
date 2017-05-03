@@ -1,0 +1,10 @@
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://www.****.com
+jdbc.username=username
+jdbc.password=password
+
+initialSize=2
+maxActive=20
+maxIdle=20
+minIdle=1
+maxWait=3000

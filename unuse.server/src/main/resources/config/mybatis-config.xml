@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<typeAlias alias="Long" type="java.lang.Long"/>
+		<typeAlias alias="String" type="java.lang.String"/>
+		<typeAlias alias="Integer" type="java.lang.Integer"/>
+		<typeAlias alias="HashMap" type="java.util.HashMap"/>
+		<typeAlias alias="User" type="com.unuse.user.api.User"/>
+		<typeAlias alias="MenuItem" type="com.unuse.auth.api.MenuItem"/>
+		<typeAlias alias="Administrator" type="com.unuse.user.api.Administrator"/>
+		<typeAlias alias="MallSeller" type="com.unuse.mall.api.MallSeller"/>
+		<typeAlias alias="MallCategory" type="com.unuse.mall.api.MallCategory"/>
+		<typeAlias alias="MallItem" type="com.unuse.mall.api.MallItem"/>
+		<typeAlias alias="MallComment" type="com.unuse.mall.api.MallComment"/>
+		<typeAlias alias="MallReply" type="com.unuse.mall.api.MallReply"/>
+		<typeAlias alias="MallCart" type="com.unuse.mall.api.MallCart"/>
+		<typeAlias alias="MallOrder" type="com.unuse.mall.api.MallOrder"/>
+		<typeAlias alias="MallGoods" type="com.unuse.mall.api.MallGoods"/>
+		<typeAlias alias="SessionData" type="com.unuse.common.SessionData"/>
+		<typeAlias alias="MallReturnGoods" type="com.unuse.mall.api.MallReturnGoods"/>
+		<typeAlias alias="UserAddress" type="com.unuse.user.api.UserAddress"/>
+		<typeAlias alias="MallSet" type="com.unuse.mall.api.MallSet"/>
+		<typeAlias alias="Diary" type="com.unuse.diary.api.Diary"/>
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="mapper/userMapper.xml"/>
+		<mapper resource="mapper/menuItemMapper.xml"/>
+		<mapper resource="mapper/administratorMapper.xml"/>
+		<mapper resource="mapper/configMapper.xml"/>
+		<mapper resource="mapper/mallSellerMapper.xml"/>
+		<mapper resource="mapper/mallCategoryMapper.xml"/>
+		<mapper resource="mapper/mallItemMapper.xml"/>
+		<mapper resource="mapper/mallCommentMapper.xml"/>
+		<mapper resource="mapper/mallReplyMapper.xml"/>
+		<mapper resource="mapper/mallCartMapper.xml"/>
+		<mapper resource="mapper/mallOrderMapper.xml"/>
+		<mapper resource="mapper/sessionDataMapper.xml"/>
+		<mapper resource="mapper/mallReturnGoodsMapper.xml"/>
+		<mapper resource="mapper/userAddressMapper.xml"/>
+		<mapper resource="mapper/mallGoodsMapper.xml"/>
+		<mapper resource="mapper/mallSetMapper.xml"/>
+		<mapper resource="mapper/diaryMapper.xml"/>
+	</mappers>
+
+</configuration>

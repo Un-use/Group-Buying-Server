@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unuse.auth.mapper.AuthMapper">
+
+	<resultMap id="menuItemResultMap" type="MenuItem">
+		<id column="id" property="id" jdbcType="INTEGER"/>
+		<result column="parentId" property="parentId" jdbcType="INTEGER"/>
+		<result column="text" property="text" jdbcType="VARCHAR"/>
+		<result column="href" property="href" jdbcType="VARCHAR"/>
+	</resultMap>
+
+	<sql id="MenuItem_Column_List">
+		`id`, `parentId`, `text`, `href`
+	</sql>
+
+	<select id="getMenuItemList" resultMap="menuItemResultMap">
+		SELECT
+		<include refid="MenuItem_Column_List"/>
+		FROM menu_item
+	</select>
+
+	<insert id="addMenuItem" parameterType="MenuItem">
+		insert into menu_item
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				`id`,
+			</if>
+			<if test="parentId != null">
+				`parentId`,
+			</if>
+			<if test="text != null">
+				`text`,
+			</if>
+			<if test="href != null">
+				`href`,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id},
+			</if>
+			<if test="parentId != null">
+				#{parentId},
+			</if>
+			<if test="text != null">
+				#{text},
+			</if>
+			<if test="href != null">
+				#{href},
+			</if>
+		</trim>
+	</insert>
+
+	<delete id="deleteMenuItemById" parameterType="Integer">
+		DELETE menu_item
+		WHERE `id` = #{id}
+	</delete>
+
+	<update id="updateMenuItemById" parameterType="MenuItem">
+		update menu_item
+		<set>
+			<if test="parentId != null">
+				`parentId` = #{parentId},
+			</if>
+			<if test="text != null">
+				`text` = #{text},
+			</if>
+			<if test="href != null">
+				`href` = #{href},
+			</if>
+		</set>
+		where `id` = #{id}
+	</update>
+
+
+</mapper>

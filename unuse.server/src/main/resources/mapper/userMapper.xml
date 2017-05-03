@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unuse.user.mapper.UserMapper">
+
+	<resultMap id="UserResultMap" type="User">
+		<id column="uid" property="uid" jdbcType="BIGINT"/>
+		<result column="phone" property="phone" jdbcType="VARCHAR"/>
+		<result column="name" property="name" jdbcType="VARCHAR"/>
+		<result column="username" property="username" jdbcType="VARCHAR"/>
+		<result column="password" property="password" jdbcType="VARCHAR"/>
+		<result column="payPwd" property="payPwd" jdbcType="VARCHAR"/>
+		<result column="gender" property="gender" jdbcType="VARCHAR"/>
+		<result column="avatar" property="avatar" jdbcType="VARCHAR"/>
+		<result column="funds" property="funds" jdbcType="DECIMAL"/>
+		<result column="certificate" property="certificate" jdbcType="TINYINT"/>
+		<result column="seller" property="seller" jdbcType="TINYINT"/>
+		<result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+		<result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<sql id="User_Column_List">
+    	`uid`, `phone`, `password`, `username`, `name`, `payPwd`, `gender`, `avatar`, `funds`, `certificate`, `seller`, `createTime`, `updateTime`
+	</sql>
+
+	<select id="getUserByUid" resultMap="UserResultMap" parameterType="Long">
+		SELECT
+		<include refid="User_Column_List"/>
+		FROM user
+		WHERE `uid` = #{uid,jdbcType=BIGINT}
+	</select>
+
+	<insert id="addUser" parameterType="User" useGeneratedKeys="true" keyProperty="uid">
+		INSERT INTO user (`phone`, `payPwd`, `password`, `createTime`, `updateTime`)
+		VALUES (#{phone}, #{password}, #{password}, sysDate(), sysDate())
+	</insert>
+
+	<select id="getUserByPhone" resultMap="UserResultMap" parameterType="String">
+		SELECT
+		<include refid="User_Column_List"/>
+		FROM user
+		WHERE `phone` = #{phone}
+	</select>
+
+	<delete id="deleteUserByUid" parameterType="Long">
+    	DELETE user WHERE `uid` = #{uid}
+	</delete>
+
+	<update id="updateUser" parameterType="User">
+		UPDATE user
+		<set>
+			<if test="password != null">
+				`password` = #{password},
+			</if>
+			<if test="username != null">
+				`username` = #{username},
+			</if>
+			<if test="name != null">
+				`name` = #{name},
+			</if>
+			<if test="payPwd != null">
+				`payPwd` = #{payPwd},
+			</if>
+			<if test="gender != null">
+				`gender` = #{gender},
+			</if>
+			<if test="avatar != null">
+				`avatar` = #{avatar},
+			</if>
+			<if test="funds != null">
+				`funds` = #{funds},
+			</if>
+			<if test="certificate != null">
+				`certificate` = #{certificate},
+			</if>
+			<if test="seller != null">
+				`seller` = #{seller},
+			</if>
+			`updateTime` = sysDate(),
+		</set>
+		WHERE `uid` = #{uid}
+	</update>
+
+
+</mapper>

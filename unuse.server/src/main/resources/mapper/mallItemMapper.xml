@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unuse.mall.mapper.MallMapper">
+
+	<resultMap id="MallItemResultMap" type="MallItem">
+		<id column="itemId" property="itemId" jdbcType="BIGINT"/>
+		<result column="joinNumber" property="joinNumber" jdbcType="INTEGER"/>
+		<result column="title" property="title" jdbcType="VARCHAR"/>
+		<result column="usage" property="usage" jdbcType="VARCHAR"/>
+		<result column="price" property="price" jdbcType="DECIMAL"/>
+		<result column="salesVolume" property="salesVolume" jdbcType="INTEGER"/>
+		<result column="cid" property="cid" jdbcType="INTEGER"/>
+		<result column="mainPictureListJson" property="mainPictureListJson" jdbcType="VARCHAR"/>
+		<result column="detailPictureListJson" property="detailPictureListJson" jdbcType="VARCHAR"/>
+		<result column="stock" property="stock" jdbcType="INTEGER"/>
+		<result column="skuListJson" property="skuListJson" jdbcType="VARCHAR"/>
+		<result column="description" property="description" jdbcType="VARCHAR"/>
+		<result column="choice" property="choice" jdbcType="INTEGER"/>
+		<result column="type" property="type" jdbcType="INTEGER"/>
+		<result column="secret" property="secret" jdbcType="VARCHAR"/>
+		<result column="order" property="order" jdbcType="INTEGER"/>
+		<result column="status" property="status" jdbcType="INTEGER"/>
+		<result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+		<result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<sql id="Mall_Item_Column_List">
+    	`itemId`, `joinNumber`, `title`, `usage`, `price`, `salesVolume`, `cid`, `stock`, `skuListJson`, `choice`,
+    	`description`, `mainPictureListJson`, `detailPictureListJson`, `type`, `secret`, `order`, `status`, `createTime`, `updateTime`
+  	</sql>
+
+	<select id="getMallItemItemIdList" resultType="Long">
+		SELECT
+		`itemId`
+		FROM mall_item
+		WHERE 1 = 1
+		<if test="null != title">
+			AND `title` LIKE CONCAT('%', #{title}, '%')
+		</if>
+		<if test="null != startPrice">
+			<![CDATA[
+			AND `price` >= #{startPrice}
+			]]>
+		</if>
+		<if test="null != endPrice">
+			<![CDATA[
+			AND `price` <= #{endPrice}
+			]]>
+		</if>
+		<if test="null != cidStr">
+			AND `cid` IN (${cidStr})
+		</if>
+		<if test="null != choice">
+			AND `choice` = #{choice}
+		</if>
+		<if test="null != type">
+			AND `type` = #{type}
+		</if>
+		<if test="null != status">
+			AND `status` = #{status}
+		</if>
+		ORDER BY `order` DESC
+		<if test="null != start">
+			LIMIT #{start}, #{count}
+		</if>
+	</select>
+
+	<select id="getTodayNewMallItemIdList" resultType="Long">
+		SELECT
+		`itemId`
+		FROM mall_item
+		WHERE 1 = 1
+		<if test="null != startTime">
+			<![CDATA[
+			AND `createTime` >= #{startTime}
+			]]>
+		</if>
+		<if test="null != endTime">
+			<![CDATA[
+			AND `createTime` <= #{endTime}
+			]]>
+		</if>
+		<if test="null != status">
+			AND `status` = #{status}
+		</if>
+		ORDER BY `order` DESC
+		<if test="null != start">
+			LIMIT #{start}, #{count}
+		</if>
+	</select>
+
+	<select id="getMallItemListCount" resultType="Integer">
+		SELECT
+		COUNT(*)
+		FROM mall_item
+		WHERE 1 = 1
+		<if test="null != title">
+			AND `title` LIKE CONCAT('%', #{title}, '%')
+		</if>
+		<if test="null != startPrice">
+			<![CDATA[
+			AND `price` >= #{startPrice}
+			]]>
+		</if>
+		<if test="null != endPrice">
+			<![CDATA[
+			AND `price` <= #{endPrice}
+			]]>
+		</if>
+		<if test="null != cidStr">
+			AND `cid` IN (#{cidStr})
+		</if>
+		<if test="null != type">
+			AND `type` = #{type}
+		</if>
+		<if test="null != status">
+			AND `status` = #{status}
+		</if>
+	</select>
+
+	<select id="getMallItemByItemId" resultMap="MallItemResultMap">
+		SELECT
+		<include refid="Mall_Item_Column_List"/>
+		FROM mall_item
+		WHERE `itemId` = #{itemId}
+	</select>
+
+	<insert id="addMallItem" parameterType="MallItem">
+		INSERT INTO mall_item (`joinNumber`, `title`, `usage`, `price`, `cid`, `mainPictureListJson`, `detailPictureListJson`, `stock`, `skuListJson`, `description`, `type`, `secret`, `createTime`, `updateTime`)
+						VALUES (#{joinNumber}, #{title}, #{usage}, #{price}, #{cid}, #{mainPictureListJson}, #{detailPictureListJson}, #{stock}, #{skuListJson}, #{description}, #{type}, #{secret}, sysDate(), sysDate())
+	</insert>
+
+	<update id="updateMallItem" parameterType="MallItem">
+		UPDATE mall_item
+		<set>
+			<if test="title != null">
+				`title` = #{title},
+			</if>
+			<if test="salesVolume != null">
+				`salesVolume` = #{salesVolume},
+			</if>
+			<if test="price != null">
+				`price` = #{price},
+			</if>
+			<if test="cid != null">
+				`cid` = #{cid},
+			</if>
+			<if test="mainPictureListJson != null">
+				`mainPictureListJson` = #{mainPictureListJson},
+			</if>
+			<if test="detailPictureListJson != null">
+				`detailPictureListJson` = #{detailPictureListJson},
+			</if>
+			<if test="stock != null">
+				`stock` = #{stock},
+			</if>
+			<if test="skuListJson != null">
+				`skuListJson` = #{skuListJson},
+			</if>
+			<if test="description != null">
+				`description` = #{description},
+			</if>
+			<if test="status != null">
+				`status` = #{status},
+			</if>
+			<if test="order != null">
+				`order` = #{order},
+			</if>
+			<if test="choice != null">
+				`choice` = #{choice},
+			</if>
+			<if test="joinNumber != null">
+				`joinNumber` = #{joinNumber},
+			</if>
+			<if test="type != null">
+				`type` = #{type},
+			</if>
+			`updateTime` = sysDate(),
+		</set>
+		WHERE `itemId` = #{itemId}
+	</update>
+
+	<update id="updateMallItemStock">
+		UPDATE mall_item
+		<set>
+			<if test="number != null">
+				`salesVolume` = `salesVolume` + #{number},
+				`stock` = `stock` - #{number},
+			</if>
+			<if test="status != null">
+				`status` = #{status},
+			</if>
+			`updateTime` = sysDate(),
+		</set>
+		WHERE `itemId` = #{itemId}
+	</update>
+
+
+</mapper>

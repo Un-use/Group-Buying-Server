@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="unuse.consoled:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/unuse_consoled_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="unuse.consoled/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="unuse.consoled" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

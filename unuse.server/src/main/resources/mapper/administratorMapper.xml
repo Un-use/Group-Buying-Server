@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.unuse.user.mapper.UserMapper">
+
+	<resultMap id="administratorResultMap" type="Administrator">
+		<id column="uid" property="uid" jdbcType="BIGINT"/>
+		<result column="status" property="status" jdbcType="INTEGER"/>
+		<result column="permission" property="permission" jdbcType="INTEGER"/>
+		<result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
+		<result column="updateTime" property="updateTime" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+
+	<sql id="Administrator_Column_List">
+		`uid`, `status`, `permission`, `createTime`, `updateTime`
+	</sql>
+
+	<insert id="addAdministrator" useGeneratedKeys="true" keyProperty="uid">
+		INSERT INTO administrator (uid, createTime, updateTime)
+		VALUES (#{uid}, sysDate(), sysDate())
+	</insert>
+
+	<select id="getAdministratorByUid" resultMap="administratorResultMap">
+		select
+		<include refid="Administrator_Column_List"/>
+		from administrator
+		where `uid` = #{uid}
+	</select>
+
+	<update id="updateAdministrator" parameterType="Administrator">
+		update administrator SET `updateTime` = sysDate()
+		<if test="permission != null">
+			`permission` = #{permission,jdbcType=INTEGER},
+		</if>
+		<if test="status != null">
+			`status` = #{status,jdbcType=INTEGER},
+		</if>
+		where `uid` = #{uid,jdbcType=BIGINT}
+	</update>
+
+</mapper>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="unuse.console:war">
+    <output-path>$PROJECT_DIR$/unuse.console/target</output-path>
+    <root id="archive" name="unuse.console-1.0.war">
+      <element id="artifact" artifact-name="unuse.console:war exploded" />
+    </root>
+  </artifact>
+</component>
