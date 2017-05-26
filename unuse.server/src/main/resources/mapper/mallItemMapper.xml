@@ -175,6 +175,9 @@
 			<if test="type != null">
 				`type` = #{type},
 			</if>
+			<if test="usage != null">
+				`usage` = #{usage},
+			</if>
 			`updateTime` = sysDate(),
 		</set>
 		WHERE `itemId` = #{itemId}

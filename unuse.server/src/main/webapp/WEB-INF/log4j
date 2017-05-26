@@ -22,26 +22,17 @@ log4j.appender.stdout.layout.ConversionPattern=[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-
 
 log4j.appender.R=org.apache.log4j.RollingFileAppender
 log4j.appender.R.Threshold=DEBUG
-log4j.appender.R.File=/usr/local/tomcat-7.0.72/logs/unuse.log
+log4j.appender.R.File=/usr/local/tomcat-8.5.14/logs/unuse.log
 log4j.appender.R.Append=true
 log4j.appender.R.MaxFileSize=4096KB
 log4j.appender.R.MaxBackupIndex=10
 log4j.appender.R.layout=org.apache.log4j.PatternLayout
 log4j.appender.R.layout.ConversionPattern=[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5p] [%t] [%m] [%F:%L]%n
 
-log4j.appender.E=org.apache.log4j.RollingFileAppender
-log4j.appender.E.Threshold=ERROR
-log4j.appender.E.File=/usr/local/tomcat-7.0.72/logs/unuse.log
-log4j.appender.E.Append=true
-log4j.appender.E.MaxFileSize=4096KB
-log4j.appender.E.MaxBackupIndex=10
-log4j.appender.E.layout=org.apache.log4j.PatternLayout
-log4j.appender.E.layout.ConversionPattern=[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5p] [%t] [%m] [%F:%L]%n
-
 log4j.logger.com.unuse=DEBUG
 log4j.logger.org.springframework.web.servlet = ERROR
 
-#½«LogÐÅÏ¢Êä³öµ½Console
+#ï¿½ï¿½Logï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½Console
 log4j.appender.console=org.apache.log4j.ConsoleAppender
 log4j.appender.console.Target=System.out
 log4j.appender.console.layout=org.apache.log4j.PatternLayout
