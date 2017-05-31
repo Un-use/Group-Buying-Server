@@ -45,8 +45,8 @@
 	</select>
 
 	<insert id="addMallReply" parameterType="MallReply">
-		INSERT INTO mall_reply (`commentId`, `itemId`, `toUid`, `fromUid`, `content`, `pictureListJson`, `createTime`, `updateTime`)
-						VALUES (#{commentId}, #{itemId}, #{toUid}, #{fromUid}, #{content}, #{pictureListJson}, sysDate(), sysDate())
+		INSERT INTO mall_reply (`commentId`, `itemId`, `toUid`, `fromUid`, `content`, `pictureListJson`, `status`, `createTime`, `updateTime`)
+						VALUES (#{commentId}, #{itemId}, #{toUid}, #{fromUid}, #{content}, #{pictureListJson}, #{status}, sysDate(), sysDate())
 	</insert>
 
 	<update id="updateMallReply" parameterType="MallReply">

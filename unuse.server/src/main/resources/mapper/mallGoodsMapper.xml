@@ -51,8 +51,8 @@
 	</select>
 
 	<insert id="addMallGoods" parameterType="MallGoods" useGeneratedKeys="true" keyProperty="gid">
-    INSERT INTO mall_goods (`uid`, `oid`, `itemId`, `userAddressId`, `skuListJson`, `number`, `createTime`, `updateTime`)
-                    VALUES (#{uid}, #{oid}, #{itemId}, #{userAddressId}, #{skuListJson}, #{number}, sysDate(), sysDate())
+    INSERT INTO mall_goods (`uid`, `oid`, `itemId`, `userAddressId`, `skuListJson`, `number`, `status`, `createTime`, `updateTime`)
+                    VALUES (#{uid}, #{oid}, #{itemId}, #{userAddressId}, #{skuListJson}, #{number}, #{status}, sysDate(), sysDate())
   </insert>
 
 	<update id="updateMallGoods" parameterType="MallGoods">

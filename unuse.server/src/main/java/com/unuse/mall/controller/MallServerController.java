@@ -72,7 +72,7 @@ public class MallServerController extends BaseController {
     @Transactional
     public ResponseResult updateMallCategory(@RequestBody MallCategory mallCategory) {
 
-        if (null == mallCategory.getCid()) {
+        if (null == mallCategory.getValue()) {
             mallServerService.addMallCategory(mallCategory);
         } else {
             mallServerService.updateMallCategory(mallCategory);

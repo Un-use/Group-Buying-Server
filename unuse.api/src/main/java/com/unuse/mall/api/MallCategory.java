@@ -11,11 +11,11 @@ public class MallCategory implements Serializable {
 
     /** DB data **/
 
-    private Integer cid;
+    private Integer value;
 
     private Integer parentCid;
 
-    private String title;
+    private String label;
 
     private Integer level;
 
@@ -25,12 +25,12 @@ public class MallCategory implements Serializable {
 
     private Date updateTime;
 
-    public Integer getCid() {
-        return cid;
+    public Integer getValue() {
+        return value;
     }
 
-    public void setCid(Integer cid) {
-        this.cid = cid;
+    public void setValue(Integer value) {
+        this.value = value;
     }
 
     public Integer getParentCid() {
@@ -41,12 +41,12 @@ public class MallCategory implements Serializable {
         this.parentCid = parentCid;
     }
 
-    public String getTitle() {
-        return title;
+    public String getLabel() {
+        return label;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setLabel(String label) {
+        this.label = label;
     }
 
     public Integer getLevel() {

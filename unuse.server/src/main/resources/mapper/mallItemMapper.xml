@@ -126,8 +126,8 @@
 	</select>
 
 	<insert id="addMallItem" parameterType="MallItem">
-		INSERT INTO mall_item (`joinNumber`, `title`, `usage`, `price`, `cid`, `mainPictureListJson`, `detailPictureListJson`, `stock`, `skuListJson`, `description`, `type`, `secret`, `createTime`, `updateTime`)
-						VALUES (#{joinNumber}, #{title}, #{usage}, #{price}, #{cid}, #{mainPictureListJson}, #{detailPictureListJson}, #{stock}, #{skuListJson}, #{description}, #{type}, #{secret}, sysDate(), sysDate())
+		INSERT INTO mall_item (`joinNumber`, `title`, `usage`, `price`, `cid`, `mainPictureListJson`, `detailPictureListJson`, `stock`, `skuListJson`, `description`, `type`, `secret`, `status`, `createTime`, `updateTime`)
+						VALUES (#{joinNumber}, #{title}, #{usage}, #{price}, #{cid}, #{mainPictureListJson}, #{detailPictureListJson}, #{stock}, #{skuListJson}, #{description}, #{type}, #{status}, #{secret}, sysDate(), sysDate())
 	</insert>
 
 	<update id="updateMallItem" parameterType="MallItem">

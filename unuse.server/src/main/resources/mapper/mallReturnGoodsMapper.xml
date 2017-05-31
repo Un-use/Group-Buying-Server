@@ -44,8 +44,8 @@
 	</select>
 
 	<insert id="addMallReturnGoods" parameterType="MallReturnGoods">
-    INSERT INTO mall_return_goods (`uid`, `oid`, `itemId`, `reason`, `des`, `pictureListJson`, `createTime`, `updateTime`)
-                    VALUES (#{uid}, #{oid}, #{itemId}, #{reason}, #{des}, #{pictureListJson}, sysDate(), sysDate())
+    INSERT INTO mall_return_goods (`uid`, `oid`, `itemId`, `reason`, `des`, `pictureListJson`, `status`, `createTime`, `updateTime`)
+                    VALUES (#{uid}, #{oid}, #{itemId}, #{reason}, #{des}, #{pictureListJson}, #{status}, sysDate(), sysDate())
   </insert>
 
 	<update id="updateMallReturnGoods" parameterType="MallReturnGoods">

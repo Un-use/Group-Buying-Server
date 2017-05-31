@@ -3,9 +3,9 @@
 <mapper namespace="com.unuse.mall.mapper.MallMapper">
 
 	<resultMap id="MallCategoryResultMap" type="MallCategory">
-		<id column="cid" property="cid" jdbcType="INTEGER"/>
+		<id column="cid" property="value" jdbcType="INTEGER"/>
 		<result column="parentCid" property="parentCid" jdbcType="INTEGER"/>
-		<result column="title" property="title" jdbcType="VARCHAR"/>
+		<result column="title" property="label" jdbcType="VARCHAR"/>
 		<result column="level" property="level" jdbcType="TINYINT"/>
 		<result column="status" property="status" jdbcType="TINYINT"/>
 		<result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
@@ -37,15 +37,15 @@
 	</select>
 
 	<insert id="addMallCategory" parameterType="MallCategory">
-		INSERT INTO mall_category (`parentCid`, `title`, `level`, `createTime`, `updateTime`)
-						  VALUES (#{parentCid}, #{title}, #{level}, sysDate(), sysDate())
+		INSERT INTO mall_category (`parentCid`, `title`, `level`, `status`, `createTime`, `updateTime`)
+						  VALUES (#{parentCid}, #{label}, #{level}, #{status}, sysDate(), sysDate())
   	</insert>
 
 	<update id="updateMallCategory" parameterType="MallCategory">
 		UPDATE mall_category
 		<set>
 			<if test="title != null">
-				`title` = #{title},
+				`title` = #{label},
 			</if>
 			<if test="parentCid != null">
 				`parentCid` = #{parentCid},
@@ -58,7 +58,7 @@
 			</if>
 			`updateTime` = sysDate(),
 		</set>
-		WHERE `cid` = #{cid}
+		WHERE `cid` = #{value}
 	</update>
 
 

@@ -57,8 +57,8 @@
 	</select>
 
 	<insert id="addMallComment" parameterType="MallComment">
-		INSERT INTO mall_comment (`itemId`, `uid`, `content`, `pictureListJson`, `createTime`, `updateTime`)
-						  VALUES (#{itemId}, #{uid}, #{content}, #{pictureListJson}, sysDate(), sysDate())
+		INSERT INTO mall_comment (`itemId`, `uid`, `content`, `pictureListJson`, `status`, `createTime`, `updateTime`)
+						  VALUES (#{itemId}, #{uid}, #{content}, #{pictureListJson}, #{status}, sysDate(), sysDate())
   	</insert>
 
 	<update id="updateMallComment" parameterType="MallComment">

@@ -16,8 +16,8 @@
 	</sql>
 
 	<insert id="addAdministrator" useGeneratedKeys="true" keyProperty="uid">
-		INSERT INTO administrator (uid, createTime, updateTime)
-		VALUES (#{uid}, sysDate(), sysDate())
+		INSERT INTO administrator (`uid`, `status`, `createTime`, `updateTime`)
+		VALUES (#{uid}, #{status}, sysDate(), sysDate())
 	</insert>
 
 	<select id="getAdministratorByUid" resultMap="administratorResultMap">

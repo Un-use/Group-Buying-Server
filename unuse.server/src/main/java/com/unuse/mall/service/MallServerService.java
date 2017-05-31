@@ -182,12 +182,12 @@ public class MallServerService {
 				}
 
 				if (IMall.CategoryLevel.FIRST == mallCategory.getLevel()) {
-					cidStringMap.put(mallCategory.getCid(), mallCategory.getCid().toString());
+					cidStringMap.put(mallCategory.getValue(), mallCategory.getValue().toString());
 				} else {
 					cidString = cidStringMap.get(mallCategory.getParentCid());
-					cidString += "," + mallCategory.getCid();
+					cidString += "," + mallCategory.getValue();
 					cidStringMap.put(mallCategory.getParentCid(), cidString);
-					cidStringMap.put(mallCategory.getCid(), mallCategory.getCid().toString());
+					cidStringMap.put(mallCategory.getValue(), mallCategory.getValue().toString());
 				}
 
 			}

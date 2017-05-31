@@ -56,8 +56,8 @@
 	</select>
 
 	<insert id="addMallSet" parameterType="MallSet">
-		INSERT INTO mall_set (`title`, `content`, `itemIdListJson`, `startTime`, `endTime`, `createTime`, `updateTime`)
-					  VALUES (#{title}, #{content}, #{itemIdListJson}, #{startTime}, #{endTime}, sysDate(), sysDate())
+		INSERT INTO mall_set (`title`, `content`, `itemIdListJson`, `status`, `startTime`, `endTime`, `createTime`, `updateTime`)
+					  VALUES (#{title}, #{content}, #{itemIdListJson}, #{status}, #{startTime}, #{endTime}, sysDate(), sysDate())
 	</insert>
 
 	<update id="updateMallSet" parameterType="MallSet">
@@ -77,6 +77,9 @@
 			</if>
 			<if test="endTime != null">
 				`endTime` = #{endTime},
+			</if>
+			<if test="status != null">
+				`status` = #{status},
 			</if>
 			`updateTime` = sysDate(),
 		</set>
