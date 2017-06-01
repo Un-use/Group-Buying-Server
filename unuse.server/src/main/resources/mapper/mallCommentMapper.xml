@@ -23,7 +23,13 @@
 		SELECT
 		<include refid="Mall_Comment_Column_List"/>
 		FROM mall_comment
-		WHERE `itemId` = #{itemId}
+		WHERE 1 = 1
+		<if test="itemId != null">
+			AND `itemId` = #{itemId}
+		</if>
+		<if test="uid != null">
+			AND `uid` = #{uid}
+		</if>
 		<if test="status != null">
 			AND `status` = #{status}
 		</if>
@@ -40,7 +46,13 @@
 		SELECT
 		COUNT(*)
 		FROM mall_comment
-		WHERE `itemId` = #{itemId}
+		WHERE 1 = 1
+		<if test="itemId != null">
+			AND `itemId` = #{itemId}
+		</if>
+		<if test="uid != null">
+			AND `uid` = #{uid}
+		</if>
 		<if test="status != null">
 			AND `status` = #{status}
 		</if>

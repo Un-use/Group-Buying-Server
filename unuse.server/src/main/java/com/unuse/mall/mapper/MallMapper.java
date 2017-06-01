@@ -74,12 +74,14 @@ public interface MallMapper {
     MallComment getMalCommentByCommentId(@Param("commentId") Long commentId);
 
     List<MallComment> getMalCommentListByItemId(@Param("itemId") Long itemId,
+                                                @Param("uid") Long uid,
                                                 @Param("status") Integer status,
                                                 @Param("disabled") Integer disabled,
                                                 @Param("start") Integer start,
                                                 @Param("count") Integer count);
 
     Integer getMallCommentListCountByItemId(@Param("itemId") Long itemId,
+                                            @Param("uid") Long uid,
                                             @Param("status") Integer status,
                                             @Param("disabled") Integer disabled);
 
@@ -93,11 +95,13 @@ public interface MallMapper {
     MallReply getMallReplyByReplyId(@Param("replyId") Long replyId);
 
     List<MallReply> getMallReplyListByCommentId(@Param("commentId") Long commentId,
+                                                @Param("fromUid") Long fromUid,
                                                 @Param("status") Integer status,
                                                 @Param("start") Integer start,
                                                 @Param("count") Integer count);
 
     Integer getMallReplyListCountByCommentId(@Param("commentId") Long commentId,
+                                             @Param("fromUid") Long fromUid,
                                              @Param("status") Integer status);
 
 

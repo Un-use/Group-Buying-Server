@@ -194,6 +194,7 @@ public class MallServerController extends BaseController {
     @ResponseBody
     public MallCommentListResult getMallCommentList(
             @RequestParam(value = "itemId", required = false) Long itemId,
+            @RequestParam(value = "uid", required = false) Long uid,
             @RequestParam(value = "status", required = false) Integer status,
             @RequestParam(value = "disabled", required = false) Integer disabled,
             @RequestParam(value = "start", required = false) Integer start,
@@ -208,10 +209,10 @@ public class MallServerController extends BaseController {
 
 		MallCommentListResult result = new MallCommentListResult();
 
-        List<MallComment> commentList = mallServerService.getMallCommentListByItemId(itemId, status, disabled, start, count);
+        List<MallComment> commentList = mallServerService.getMallCommentListByItemId(itemId, uid, status, disabled, start, count);
         result.setCommentList(commentList);
 
-        Integer allCount = mallServerService.getMallCommentListCountByItemId(itemId, status, disabled);
+        Integer allCount = mallServerService.getMallCommentListCountByItemId(itemId, uid, status, disabled);
         result.setAllCount(allCount);
 
         return result;
@@ -237,7 +238,8 @@ public class MallServerController extends BaseController {
     @RequestMapping(value = IMall.API_PATH_MALL_ITEM_REPLY_LIST_GET, method = RequestMethod.GET)
     @ResponseBody
     public MallReplyListResult getMallReplyList(
-            @RequestParam(value = "commentId", required = true) Long commentId,
+            @RequestParam(value = "commentId", required = false) Long commentId,
+            @RequestParam(value = "fromUid", required = false) Long fromUid,
             @RequestParam(value = "status", required = false) Integer status,
             @RequestParam(value = "start", required = false) Integer start,
             @RequestParam(value = "count", required = false) Integer count) {
@@ -251,10 +253,10 @@ public class MallServerController extends BaseController {
 
 		MallReplyListResult result = new MallReplyListResult();
 
-        List<MallReply> replyList = mallServerService.getMallReplyListByCommentId(commentId, status, start, count);
+        List<MallReply> replyList = mallServerService.getMallReplyListByCommentId(commentId, fromUid, status, start, count);
         result.setReplyList(replyList);
 
-        Integer allCount = mallServerService.getMallReplyListCountByCommentId(commentId, status);
+        Integer allCount = mallServerService.getMallReplyListCountByCommentId(commentId, fromUid, status);
         result.setAllCount(allCount);
 
         return result;

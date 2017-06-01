@@ -256,9 +256,9 @@ public class MallServerService {
         mallMapper.updateMallComment(mallComment);
     }
 
-    public List<MallComment> getMallCommentListByItemId(Long itemId, Integer status, Integer disabled, Integer start, Integer count) {
+    public List<MallComment> getMallCommentListByItemId(Long itemId, Long uid, Integer status, Integer disabled, Integer start, Integer count) {
 
-        List<MallComment> commentList = mallMapper.getMalCommentListByItemId(itemId, status, disabled, start, count);
+        List<MallComment> commentList = mallMapper.getMalCommentListByItemId(itemId, uid, status, disabled, start, count);
         if (null != commentList && !commentList.isEmpty()) {
             MallItem normalItem = null;
 
@@ -273,7 +273,7 @@ public class MallServerService {
                     String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), normalItem.getSecret(), normalItem.getItemId().toString(), "comment");
                     mallComment.setPictureList(makePictureList(mallComment.getPictureListJson(), preUrl));
 
-                    mallComment.setReplyList(getMallReplyListByCommentId(mallComment.getCommentId(), IMall.CommentStatus.PASS, null, null));
+                    mallComment.setReplyList(getMallReplyListByCommentId(mallComment.getCommentId(), null, IMall.CommentStatus.PASS, null, null));
                 }
 
             }
@@ -282,8 +282,8 @@ public class MallServerService {
         return commentList;
     }
 
-    public Integer getMallCommentListCountByItemId(Long itemId, Integer status, Integer disabled) {
-        return mallMapper.getMallCommentListCountByItemId(itemId, status, disabled);
+    public Integer getMallCommentListCountByItemId(Long itemId, Long uid, Integer status, Integer disabled) {
+        return mallMapper.getMallCommentListCountByItemId(itemId, uid, status, disabled);
     }
 
     public MallComment getMallCommentByCommentId(Long commentId) {
@@ -340,9 +340,9 @@ public class MallServerService {
         mallMapper.updateMallReply(mallReply);
     }
 
-    public List<MallReply> getMallReplyListByCommentId(Long commentId, Integer status, Integer start, Integer count) {
+    public List<MallReply> getMallReplyListByCommentId(Long commentId, Long fromUid, Integer status, Integer start, Integer count) {
 
-        List<MallReply> replyList = mallMapper.getMallReplyListByCommentId(commentId, status, start, count);
+        List<MallReply> replyList = mallMapper.getMallReplyListByCommentId(commentId, fromUid, status, start, count);
 
         if (null != replyList && !replyList.isEmpty()) {
             MallItem mallItem = null;
@@ -370,8 +370,8 @@ public class MallServerService {
         return replyList;
     }
 
-    public Integer getMallReplyListCountByCommentId(Long commentId, Integer status) {
-        return mallMapper.getMallReplyListCountByCommentId(commentId, status);
+    public Integer getMallReplyListCountByCommentId(Long commentId, Long fromUid, Integer status) {
+        return mallMapper.getMallReplyListCountByCommentId(commentId, fromUid, status);
     }
 
 

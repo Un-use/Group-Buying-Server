@@ -23,7 +23,13 @@
 		SELECT
 		<include refid="Mall_Reply_Column_List"/>
 		FROM mall_reply
-		WHERE `commentId` = #{commentId}
+		WHERE 1 = 1
+		<if test="commentId != null">
+			AND `commentId` = #{commentId}
+		</if>
+		<if test="fromUid != null">
+			AND `fromUid` = #{fromUid}
+		</if>
 		ORDER BY `replyId` DESC
 		<if test="start != null">
 			LIMIT #{start}, #{count}
@@ -34,7 +40,13 @@
 		SELECT
 		COUNT(*)
 		FROM mall_reply
-		WHERE `commentId` = #{commentId}
+		WHERE 1 = 1
+		<if test="commentId != null">
+			AND `commentId` = #{commentId}
+		</if>
+		<if test="fromUid != null">
+			AND `fromUid` = #{fromUid}
+		</if>
 	</select>
 
 	<select id="getMallReplyByReplyId" resultMap="MallReplyResultMap">
