@@ -43,10 +43,25 @@
         <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/service/MallServerService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="523">
-              <caret line="98" column="21" lean-forward="false" selection-start-line="98" selection-start-column="15" selection-end-line="98" selection-end-column="21" />
+              <caret line="124" column="41" lean-forward="true" selection-start-line="124" selection-start-column="41" selection-end-line="124" selection-end-column="41" />
               <folding>
                 <element signature="e#2088#2102#0" expanded="true" />
                 <element signature="e#2164#2187#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mallItemMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallItemMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="129" column="117" lean-forward="true" selection-start-line="129" selection-start-column="117" selection-end-line="129" selection-end-column="117" />
+              <folding>
+                <marker date="1496306123090" expanded="true" signature="3713:3808" ph="SELECT FROM mall_item" />
+                <marker date="1496306123090" expanded="true" signature="3875:4300" ph="INSERT INTO mall_item... " />
+                <marker date="1496306123090" expanded="true" signature="4370:5547" ph="UPDATE mall_... " />
+                <marker date="1496306123090" expanded="true" signature="5597:5874" ph="UPDATE mall_... " />
               </folding>
             </state>
           </provider>
@@ -81,8 +96,8 @@
       <file leaf-file-name="jdbc" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/property/jdbc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+            <state relative-caret-position="171">
+              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -117,11 +132,11 @@
       <find>mallitem</find>
       <find>seturl</find>
       <find>getDiaryListByStartId</find>
-      <find>addMallItem</find>
       <find>getMallCommentListCountByItemId</find>
       <find>getMalCommentListByItemId</find>
       <find>getMallReplyListByCommentId</find>
       <find>getMallCategoryList</find>
+      <find>addMallItem</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -170,7 +185,6 @@
         <option value="$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/Main.java" />
         <option value="$PROJECT_DIR$/unuse.server/src/main/webapp/WEB-INF/log4j" />
         <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallSetMapper.xml" />
-        <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallItemMapper.xml" />
         <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/administratorMapper.xml" />
         <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallCategoryMapper.xml" />
         <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallGoodsMapper.xml" />
@@ -183,6 +197,7 @@
         <option value="$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallCategory.java" />
         <option value="$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/service/MallServerService.java" />
         <option value="$PROJECT_DIR$/unuse.server/src/main/resources/property/jdbc" />
+        <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallItemMapper.xml" />
       </list>
     </option>
   </component>
@@ -794,7 +809,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="js-jscs-nodeInterpreter" value="D:\nodejs\node.exe" />
-    <property name="SearchEverywhereHistoryKey" value="mallcategorymapp&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCategoryMapper.xml&#10;mallrepl&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallReplyMapper.xml&#10;MallComm&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCommentMapper.xml&#10;mallmapper&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCommentMapper.xml&#10;MallItem&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallItemMapper.xml&#10;mallsetma&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallSetMapper.xml&#10;mallc&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCategoryMapper.xml&#10;MallCategoryma&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCategoryMapper.xml&#10;mallitemmapper&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallItemMapper.xml&#10;Usercont&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/java/com/unuse/user/controller/UserServerController.java&#10;http&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;httpse&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;https&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;diary&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/java/com/unuse/diary/mapper/DiaryMapper.java&#10;diarymap&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/diaryMapper.xml&#10;diarymapp&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/diaryMapper.xml&#10;HttpService&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;Imall&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.api/src/main/java/com/unuse/mall/api/IMall.java&#10;IMall&#9;PSI&#9;JAVA://com.unuse.mall.api.IMall&#10;usermapper&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.server/src/main/resources/mapper/userAddressMapper.xml&#10;responseresu&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.api/src/main/java/com/unuse/common/ResponseResult.java&#10;userData&#9;PSI&#9;JAVA://com.unuse.user.api.UserData&#10;authte&#9;PSI&#9;JAVA://com.unuse.auth.AuthTest&#10;useraddr&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.server/src/main/resources/mapper/userAddressMapper.xml&#10;mallgoodsmapp&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.server/src/main/resources/mapper/mallGoodsMapper.xml&#10;sprin&#9;FILE&#9;file:///Users/unuse/Desktop/GroupBuying/Group-Buying/unuse.server/src/main/resources/config/spring-mvc.xml&#10;spring&#9;FILE&#9;file:///Users/unuse/Desktop/GroupBuying/Group-Buying/unuse.server/src/main/resources/config/spring-common.xml" />
+    <property name="SearchEverywhereHistoryKey" value="mallitemma&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallItemMapper.xml&#10;mallcategorymapp&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCategoryMapper.xml&#10;mallrepl&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallReplyMapper.xml&#10;MallComm&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCommentMapper.xml&#10;mallmapper&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCommentMapper.xml&#10;MallItem&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallItemMapper.xml&#10;mallsetma&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallSetMapper.xml&#10;mallc&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCategoryMapper.xml&#10;MallCategoryma&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCategoryMapper.xml&#10;mallitemmapper&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallItemMapper.xml&#10;Usercont&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/java/com/unuse/user/controller/UserServerController.java&#10;http&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;httpse&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;https&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;diary&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/java/com/unuse/diary/mapper/DiaryMapper.java&#10;diarymap&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/diaryMapper.xml&#10;diarymapp&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/diaryMapper.xml&#10;HttpService&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;Imall&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.api/src/main/java/com/unuse/mall/api/IMall.java&#10;IMall&#9;PSI&#9;JAVA://com.unuse.mall.api.IMall&#10;usermapper&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.server/src/main/resources/mapper/userAddressMapper.xml&#10;responseresu&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.api/src/main/java/com/unuse/common/ResponseResult.java&#10;userData&#9;PSI&#9;JAVA://com.unuse.user.api.UserData&#10;authte&#9;PSI&#9;JAVA://com.unuse.auth.AuthTest&#10;useraddr&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.server/src/main/resources/mapper/userAddressMapper.xml&#10;mallgoodsmapp&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.server/src/main/resources/mapper/mallGoodsMapper.xml&#10;sprin&#9;FILE&#9;file:///Users/unuse/Desktop/GroupBuying/Group-Buying/unuse.server/src/main/resources/config/spring-mvc.xml&#10;spring&#9;FILE&#9;file:///Users/unuse/Desktop/GroupBuying/Group-Buying/unuse.server/src/main/resources/config/spring-common.xml" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -1533,7 +1548,7 @@
       <workItem from="1496195573602" duration="628000" />
       <workItem from="1496288157984" duration="483000" />
       <workItem from="1496295512349" duration="236000" />
-      <workItem from="1496300314034" duration="1338000" />
+      <workItem from="1496300314034" duration="2345000" />
     </task>
     <task id="LOCAL-00001">
       <created>1484284868031</created>
@@ -1872,7 +1887,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="301754000" />
+    <option name="totallyTimeSpent" value="302761000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -2236,19 +2251,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallItemMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-94">
-          <caret line="130" column="13" lean-forward="true" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
-          <folding>
-            <marker date="1496195712633" expanded="true" signature="3713:3808" ph="SELECT FROM mall_item" />
-            <marker date="1496195712633" expanded="true" signature="3875:4300" ph="INSERT INTO mall_item... " />
-            <marker date="1496195712633" expanded="true" signature="4370:5547" ph="UPDATE mall_... " />
-            <marker date="1496195712633" expanded="true" signature="5597:5874" ph="UPDATE mall_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallOrderMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-855">
@@ -2400,17 +2402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/service/MallServerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="98" column="21" lean-forward="false" selection-start-line="98" selection-start-column="15" selection-end-line="98" selection-end-column="21" />
-          <folding>
-            <element signature="e#2088#2102#0" expanded="true" />
-            <element signature="e#2164#2187#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/controller/MallServerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -2419,10 +2410,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/service/MallServerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="124" column="41" lean-forward="true" selection-start-line="124" selection-start-column="41" selection-end-line="124" selection-end-column="41" />
+          <folding>
+            <element signature="e#2088#2102#0" expanded="true" />
+            <element signature="e#2164#2187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallItemMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="129" column="117" lean-forward="true" selection-start-line="129" selection-start-column="117" selection-end-line="129" selection-end-column="117" />
+          <folding>
+            <marker date="1496306123090" expanded="true" signature="3713:3808" ph="SELECT FROM mall_item" />
+            <marker date="1496306123090" expanded="true" signature="3875:4300" ph="INSERT INTO mall_item... " />
+            <marker date="1496306123090" expanded="true" signature="4370:5547" ph="UPDATE mall_... " />
+            <marker date="1496306123090" expanded="true" signature="5597:5874" ph="UPDATE mall_... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/property/jdbc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+        <state relative-caret-position="171">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
           <folding />
         </state>
       </provider>
