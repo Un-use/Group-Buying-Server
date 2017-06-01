@@ -2,6 +2,7 @@ package com.unuse.mall.api;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by unuse on 17/2/9.
@@ -24,6 +25,8 @@ public class MallCategory implements Serializable {
     private Date createTime;
 
     private Date updateTime;
+
+    private List<MallCategory> children;
 
     public Integer getValue() {
         return value;
@@ -79,5 +82,13 @@ public class MallCategory implements Serializable {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public List<MallCategory> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<MallCategory> children) {
+        this.children = children;
     }
 }

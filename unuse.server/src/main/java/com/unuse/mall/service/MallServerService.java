@@ -70,6 +70,35 @@ public class MallServerService {
         return mallMapper.getMallCategoryList(level, status);
     }
 
+	public List<MallCategory> getMallCategoryTree(List<MallCategory> categoryList) {
+    	if (null == categoryList) {
+    		categoryList = getMallCategoryList(null, IMall.CategoryStatus.NORMAL);
+		}
+
+		List<MallCategory> result = new ArrayList<MallCategory>();
+
+    	Map<Integer, MallCategory> categoryMap = new HashMap<Integer, MallCategory>();
+		for (MallCategory category : categoryList) {
+    		if (1 == category.getLevel()) {
+				categoryMap.put(category.getValue(), category);
+				result.add(category);
+			}
+		}
+
+		MallCategory parent = null;
+		for (MallCategory category : categoryList) {
+			parent = categoryMap.get(category.getParentCid());
+			if (null != parent) {
+				if (null == parent.getChildren()) {
+					parent.setChildren(new ArrayList<MallCategory>());
+				}
+				parent.getChildren().add(category);
+			}
+		}
+
+    	return result;
+	}
+
 
     /** Mall Normal Item **/
 
@@ -723,6 +752,5 @@ public class MallServerService {
 	public Integer getMallSetListCount(Integer status) {
 		return mallMapper.getMallSetListCount(status);
 	}
-
 
 }

@@ -103,6 +103,9 @@ public class MallServerController extends BaseController {
         List<MallCategory> categoryList = mallServerService.getMallCategoryList(level, IMall.CategoryStatus.NORMAL);
         result.setCategoryList(categoryList);
 
+        List<MallCategory> categoryTree = mallServerService.getMallCategoryTree(categoryList);
+        result.setCategoryTree(categoryTree);
+
         return result;
     }
 

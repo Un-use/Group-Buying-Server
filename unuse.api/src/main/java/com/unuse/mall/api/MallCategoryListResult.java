@@ -12,11 +12,21 @@ public class MallCategoryListResult extends ResponseResult {
 
     private List<MallCategory> categoryList;
 
+    private List<MallCategory> categoryTree;
+
     public List<MallCategory> getCategoryList() {
         return categoryList;
     }
 
     public void setCategoryList(List<MallCategory> categoryList) {
         this.categoryList = categoryList;
+    }
+
+    public List<MallCategory> getCategoryTree() {
+        return categoryTree;
+    }
+
+    public void setCategoryTree(List<MallCategory> categoryTree) {
+        this.categoryTree = categoryTree;
     }
 }
