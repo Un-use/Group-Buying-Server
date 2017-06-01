@@ -265,7 +265,7 @@ public class MallServerService {
             for (MallComment mallComment : commentList) {
                 if (null != mallComment) {
                     if (null == normalItem) {
-                        normalItem = mallMapper.getMallItemByItemId(itemId);
+                        normalItem = mallMapper.getMallItemByItemId(mallComment.getItemId());
                     }
 
                     mallComment.setUserData(userServerService.getUserDataByUid(mallComment.getUid()));
