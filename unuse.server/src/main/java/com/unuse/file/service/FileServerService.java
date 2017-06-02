@@ -243,6 +243,7 @@ public class FileServerService {
             fileData = new FileData();
             fileData.setName(fileName);
             fileData.setUrl(preUrl + fileName);
+            fileDataList.add(fileData);
         }
 
         clearFileNames();
