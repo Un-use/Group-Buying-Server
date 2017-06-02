@@ -359,8 +359,9 @@ public class MallServerService {
             List<String> pictureList = JSON.parseArray(pictureListJson, String.class);
             for (String picture : pictureList) {
 				fileData = new FileData();
-				fileData.setName(picture);
 				fileData.setUrl(preUrl + picture);
+				fileData.setName(picture);
+				result.add(fileData);
             }
 
         }
