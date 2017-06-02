@@ -63,6 +63,8 @@ public class FileServerService {
         // 保存文件到指定文件夹
         FileUtils.copyInputStreamToFile(file.getInputStream(), new File(filePath));
 
+        FileUtil.setFilePermission(filePath);
+
         fileNames.add(String.format("%d_%s", now.getTime(), fileName));
     }
 
@@ -142,6 +144,8 @@ public class FileServerService {
         FileUtils.copyInputStreamToFile(fis, new File(saveFilePath));
 
 		fis.close();
+
+		FileUtil.setFilePermission(saveFilePath);
 
         fileNames.add(String.format("%d_%s", now.getTime(), fileName));
     }

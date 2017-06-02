@@ -142,21 +142,36 @@ public class FileUtil {
 		
 	}
 
-    /**
-     * 将ZIP文件解压
-     *
-     * @param filePath
-     */
-    public static void unZipFile(String filePath, String folder) throws Exception {
-        if (null == filePath) {
-            return;
-        }
+	/**
+	 * 将ZIP文件解压
+	 *
+	 * @param filePath
+	 */
+	public static void unZipFile(String filePath, String folder) throws Exception {
+		if (null == filePath) {
+			return;
+		}
 
-        Runtime runtime = Runtime.getRuntime();
-        String cmd = String.format("unzip -o %s -d %s", filePath, folder);
-        Process process = runtime.exec(cmd);
-        process.waitFor();
+		Runtime runtime = Runtime.getRuntime();
+		String cmd = String.format("unzip -o %s -d %s", filePath, folder);
+		Process process = runtime.exec(cmd);
+		process.waitFor();
 
-        return;
-    }
+		return;
+	}
+
+	/**
+	 * 将保存的文件设置可读的权限
+	 *
+	 * @param filePath
+	 */
+	public static void setFilePermission(String filePath) throws IOException {
+		if (null == filePath) {
+			return;
+		}
+
+		Runtime.getRuntime().exec("chmod 644 " + filePath);
+
+		return;
+	}
 }
