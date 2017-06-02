@@ -135,6 +135,7 @@ public class StringUtil extends StringUtils {
 		}
 
 		if (null != subPath) {
+			pictureUrl.append("/");
 			pictureUrl.append(subPath);
 			pictureUrl.append("/");
 		}

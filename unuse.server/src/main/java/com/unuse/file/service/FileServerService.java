@@ -38,9 +38,6 @@ public class FileServerService {
     @Autowired
     private ConfigServerService configServerService;
 
-    @Autowired
-    private MallServerService mallServerService;
-
 
     private List<String> fileNames = new ArrayList<String>(); // 存储保存到服务器的文件名
 
@@ -174,35 +171,20 @@ public class FileServerService {
     private String getSubFolder(Integer type, Long id) {
         String subFolder = null;
 
-        MallItem mallItem = null;
         switch (type) {
+            case IFile.FileSource.USER:
             case IFile.FileSource.ITEM:
-                mallItem = mallServerService.getMallItemByItemId(id);
-                if (null != mallItem) {
-                    subFolder = mallItem.getSecret() + "_" + id;
-                }
+                subFolder = "";
                 break;
             case IFile.FileSource.ITEM_COMMENT:
-                mallItem = mallServerService.getMallItemByItemId(id);
-                if (null != mallItem) {
-                    subFolder = mallItem.getSecret() + "_" + id + "/comment";
-                }
+                subFolder = "/comment";
                 break;
             case IFile.FileSource.ITEM_REPLY:
-                mallItem = mallServerService.getMallItemByItemId(id);
-                if (null != mallItem) {
-                    subFolder = mallItem.getSecret() + "_" + id + "/reply";
-                }
+                subFolder = "/reply";
                 break;
 			case IFile.FileSource.ITEM_RETURN_GOODS:
-				mallItem = mallServerService.getMallItemByItemId(id);
-				if (null != mallItem) {
-					subFolder = mallItem.getSecret() + "_" + id + "/returnGoods";
-				}
+                subFolder = "/returnGoods";
 				break;
-            case IFile.FileSource.USER:
-                subFolder = "u_" + id;
-                break;
         }
 
         return subFolder;
@@ -214,34 +196,27 @@ public class FileServerService {
         }
 
         String preUrl = null;
-        MallItem mallItem = null;
         List<FileData> fileDataList = new ArrayList<FileData>();
-        FileData fileData = null;
 
         switch (type) {
             case IFile.FileSource.ITEM:
-                mallItem = mallServerService.getMallItemByItemId(id);
-                preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), id.toString(), null);
+                preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), null, null, null);
                 break;
             case IFile.FileSource.ITEM_COMMENT:
-                MallComment mallComment = mallServerService.getMallCommentByCommentId(id);
-                mallItem = mallServerService.getMallItemByItemId(mallComment.getItemId());
-                preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "comment");
+                preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), null, null, "comment");
                 break;
             case IFile.FileSource.ITEM_REPLY:
-                MallReply mallReply = mallServerService.getMallReplyByReplyId(id);
-                mallItem = mallServerService.getMallItemByItemId(mallReply.getItemId());
-                preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "reply");
+                preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), null, null, "reply");
                 break;
 			case IFile.FileSource.ITEM_RETURN_GOODS:
-				MallReturnGoods mallReturnGoods = mallServerService.getMallReturnGoodsById(id.intValue());
-				mallItem = mallServerService.getMallItemByItemId(mallReturnGoods.getItemId());
-                preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "returnGoods");
+                preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), null, null, "returnGoods");
 				break;
             case IFile.FileSource.USER:
-                preUrl = StringUtil.makePicturePreUrl(configServerService.getUserURL(), "u", id.toString(), null);
+                preUrl = StringUtil.makePicturePreUrl(configServerService.getUserURL(), null, null, null);
                 break;
         }
+
+        FileData fileData = null;
 
         for (String fileName : fileNames) {
             fileData = new FileData();

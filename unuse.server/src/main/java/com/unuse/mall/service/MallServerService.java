@@ -174,8 +174,9 @@ public class MallServerService {
 
         if (null == mallItem) {
 			mallItem = mallMapper.getMallItemByItemId(itemId);
+
 			if (null != mallItem) {
-				String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), itemId.toString(), null);
+				String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), null, null, null);
 
 				mallItem.setMainFileDataList(makeFileDataList(mallItem.getMainPictureListJson(), preUrl));
 
@@ -304,17 +305,13 @@ public class MallServerService {
 
         List<MallComment> commentList = mallMapper.getMalCommentListByItemId(itemId, uid, status, disabled, start, count);
         if (null != commentList && !commentList.isEmpty()) {
-            MallItem normalItem = null;
 
             for (MallComment mallComment : commentList) {
                 if (null != mallComment) {
-                    if (null == normalItem) {
-                        normalItem = getMallItemByItemId(mallComment.getItemId());
-                    }
 
                     mallComment.setUserData(userServerService.getUserDataByUid(mallComment.getUid()));
 
-                    String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), normalItem.getSecret(), normalItem.getItemId().toString(), "comment");
+                    String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), null, null, "comment");
                     mallComment.setFileDataList(makeFileDataList(mallComment.getPictureListJson(), preUrl));
 
                     mallComment.setReplyList(getMallReplyListByCommentId(mallComment.getCommentId(), null, IMall.CommentStatus.PASS, null, null));
@@ -335,9 +332,7 @@ public class MallServerService {
         MallComment mallComment = mallMapper.getMalCommentByCommentId(commentId);
 
         if (null != mallComment) {
-            MallItem mallItem = getMallItemByItemId(mallComment.getItemId());
-
-            String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "comment");
+            String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), null, null, "comment");
             mallComment.setFileDataList(makeFileDataList(mallComment.getPictureListJson(), preUrl));
 
 			mallComment.setReplyList(getMallReplyListByCommentId(mallComment.getCommentId(), null, IMall.CommentStatus.PASS, null, null));
@@ -394,15 +389,12 @@ public class MallServerService {
     	MallReply mallReply = mallMapper.getMallReplyByReplyId(replyId);
 
     	if (null != mallReply) {
-    		MallItem mallItem = getMallItemByItemId(mallReply.getItemId());
-    		if (null != mallItem) {
-				mallReply.setToUserData(userServerService.getUserDataByUid(mallReply.getToUid()));
+			mallReply.setToUserData(userServerService.getUserDataByUid(mallReply.getToUid()));
 
-				mallReply.setFromUserData(userServerService.getUserDataByUid(mallReply.getFromUid()));
+			mallReply.setFromUserData(userServerService.getUserDataByUid(mallReply.getFromUid()));
 
-				String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "reply");
-				mallReply.setFileDataList(makeFileDataList(mallReply.getPictureListJson(), preUrl));
-			}
+			String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), null, null, "reply");
+			mallReply.setFileDataList(makeFileDataList(mallReply.getPictureListJson(), preUrl));
 		}
 
 		return mallReply;
@@ -413,21 +405,15 @@ public class MallServerService {
         List<MallReply> replyList = mallMapper.getMallReplyListByCommentId(commentId, fromUid, status, start, count);
 
         if (null != replyList && !replyList.isEmpty()) {
-            MallItem mallItem = null;
 
             for (MallReply mallReply : replyList) {
 
                 if (null != mallReply) {
-
-                    if (null == mallItem) {
-						mallItem = getMallItemByItemId(mallReply.getItemId());
-                    }
+					mallReply.setFromUserData(userServerService.getUserDataByUid(mallReply.getFromUid()));
 
                     mallReply.setToUserData(userServerService.getUserDataByUid(mallReply.getToUid()));
 
-                    mallReply.setFromUserData(userServerService.getUserDataByUid(mallReply.getFromUid()));
-
-                    String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "reply");
+                    String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), null, null, "reply");
                     mallReply.setFileDataList(makeFileDataList(mallReply.getPictureListJson(), preUrl));
                 }
 
@@ -652,11 +638,10 @@ public class MallServerService {
 		MallReturnGoods mallReturnGoods = mallMapper.getMallReturnGoodsById(id);
 
 		if (null == mallReturnGoods) {
-			MallItem mallItem = getMallItemByItemId(mallReturnGoods.getItemId());
-			if (null != mallItem) {
-				String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "returnGoods");
-				mallReturnGoods.setFileDataList(makeFileDataList(mallReturnGoods.getPictureListJson(), preUrl));
-			}
+
+			String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), null, null, "returnGoods");
+			mallReturnGoods.setFileDataList(makeFileDataList(mallReturnGoods.getPictureListJson(), preUrl));
+
 		}
 
 		return mallReturnGoods;
@@ -672,11 +657,8 @@ public class MallServerService {
 				if (null != mallReturnGoods) {
 					mallReturnGoods.setMallOrder(getMallOrderByOid(mallReturnGoods.getOid()));
 
-					MallItem mallItem = getMallItemByItemId(mallReturnGoods.getItemId());
-					if (null != mallItem) {
-						String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "returnGoods");
-						mallReturnGoods.setFileDataList(makeFileDataList(mallReturnGoods.getPictureListJson(), preUrl));
-					}
+					String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), null, null, "returnGoods");
+					mallReturnGoods.setFileDataList(makeFileDataList(mallReturnGoods.getPictureListJson(), preUrl));
 
 				}
 
