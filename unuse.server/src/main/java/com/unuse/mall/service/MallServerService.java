@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.unuse.common.ResponseException;
 import com.unuse.common.ResponseResult;
 import com.unuse.config.service.ConfigServerService;
+import com.unuse.file.api.FileData;
 import com.unuse.mall.api.*;
 import com.unuse.mall.mapper.MallMapper;
 import com.unuse.user.api.User;
@@ -105,15 +106,15 @@ public class MallServerService {
     public void addMallItem(MallItem mallItem) {
 
     	if (null == mallItem.getMainPictureListJson()) {
-			mallItem.setMainPictureListJson(makeListJson(mallItem.getMainPictureList()));
+			mallItem.setMainPictureListJson(makeFileDataListJson(mallItem.getMainFileDataList()));
 		}
 
 		if (null == mallItem.getDetailPictureListJson()) {
-			mallItem.setDetailPictureListJson(makeListJson(mallItem.getDetailPictureList()));
+			mallItem.setDetailPictureListJson(makeFileDataListJson(mallItem.getDetailFileDataList()));
 		}
 
 		if (null == mallItem.getSkuListJson()) {
-			mallItem.setSkuListJson(makeListJson(mallItem.getSkuList()));
+			mallItem.setSkuListJson(makeSkuListJson(mallItem.getSkuList()));
 		}
 
 		mallItem.setSecret(StringUtil.createSecretKey6());
@@ -125,7 +126,21 @@ public class MallServerService {
         mallMapper.addMallItem(mallItem);
     }
 
-	private String makeListJson(Object object) {
+	private String makeFileDataListJson(List<FileData> fileDataList) {
+
+		if (null == fileDataList || fileDataList.isEmpty()) {
+			return null;
+		}
+
+		List<String> fileNameList = new ArrayList<String>();
+		for (FileData fileData : fileDataList) {
+			fileNameList.add(fileData.getName());
+		}
+
+		return JSON.toJSONString(fileNameList);
+	}
+
+	private String makeSkuListJson(Object object) {
 
 		if (null == object) {
 			return null;
@@ -137,15 +152,15 @@ public class MallServerService {
     public void updateMallItem(MallItem mallItem) {
 
     	if (null == mallItem.getMainPictureListJson()) {
-			mallItem.setMainPictureListJson(makeListJson(mallItem.getMainPictureList()));
+			mallItem.setMainPictureListJson(makeFileDataListJson(mallItem.getMainFileDataList()));
 		}
 
 		if (null == mallItem.getDetailPictureListJson()) {
-			mallItem.setDetailPictureListJson(makeListJson(mallItem.getDetailPictureList()));
+			mallItem.setDetailPictureListJson(makeFileDataListJson(mallItem.getDetailFileDataList()));
 		}
 
 		if (null == mallItem.getSkuListJson()) {
-			mallItem.setSkuListJson(makeListJson(mallItem.getSkuList()));
+			mallItem.setSkuListJson(makeSkuListJson(mallItem.getSkuList()));
 		}
 
         mallMapper.updateMallItem(mallItem);
@@ -162,9 +177,9 @@ public class MallServerService {
 			if (null != mallItem) {
 				String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), itemId.toString(), null);
 
-				mallItem.setMainPictureList(makePictureList(mallItem.getMainPictureListJson(), preUrl));
+				mallItem.setMainFileDataList(makeFileDataList(mallItem.getMainPictureListJson(), preUrl));
 
-				mallItem.setDetailPictureList(makePictureList(mallItem.getDetailPictureListJson(), preUrl));
+				mallItem.setDetailFileDataList(makeFileDataList(mallItem.getDetailPictureListJson(), preUrl));
 
 				mallItem.setSkuList(makeMallItemSkuList(mallItem.getSkuListJson()));
 
@@ -270,7 +285,7 @@ public class MallServerService {
     public void addMallComment(MallComment mallComment) {
 
     	if (null == mallComment.getPictureListJson()) {
-			mallComment.setPictureListJson(makeListJson(mallComment.getPictureList()));
+			mallComment.setPictureListJson(makeFileDataListJson(mallComment.getFileDataList()));
 		}
 
         mallMapper.addMallComment(mallComment);
@@ -279,7 +294,7 @@ public class MallServerService {
     public void updateMallComment(MallComment mallComment) {
 
 		if (null == mallComment.getPictureListJson()) {
-			mallComment.setPictureListJson(makeListJson(mallComment.getPictureList()));
+			mallComment.setPictureListJson(makeFileDataListJson(mallComment.getFileDataList()));
 		}
 
         mallMapper.updateMallComment(mallComment);
@@ -294,13 +309,13 @@ public class MallServerService {
             for (MallComment mallComment : commentList) {
                 if (null != mallComment) {
                     if (null == normalItem) {
-                        normalItem = mallMapper.getMallItemByItemId(mallComment.getItemId());
+                        normalItem = getMallItemByItemId(mallComment.getItemId());
                     }
 
                     mallComment.setUserData(userServerService.getUserDataByUid(mallComment.getUid()));
 
                     String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), normalItem.getSecret(), normalItem.getItemId().toString(), "comment");
-                    mallComment.setPictureList(makePictureList(mallComment.getPictureListJson(), preUrl));
+                    mallComment.setFileDataList(makeFileDataList(mallComment.getPictureListJson(), preUrl));
 
                     mallComment.setReplyList(getMallReplyListByCommentId(mallComment.getCommentId(), null, IMall.CommentStatus.PASS, null, null));
                 }
@@ -320,10 +335,12 @@ public class MallServerService {
         MallComment mallComment = mallMapper.getMalCommentByCommentId(commentId);
 
         if (null != mallComment) {
-            MallItem normalItem = mallMapper.getMallItemByItemId(mallComment.getItemId());
+            MallItem mallItem = getMallItemByItemId(mallComment.getItemId());
 
-            String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), normalItem.getSecret(), normalItem.getItemId().toString(), "comment");
-            mallComment.setPictureList(makePictureList(mallComment.getPictureListJson(), preUrl));
+            String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "comment");
+            mallComment.setFileDataList(makeFileDataList(mallComment.getPictureListJson(), preUrl));
+
+			mallComment.setReplyList(getMallReplyListByCommentId(mallComment.getCommentId(), null, IMall.CommentStatus.PASS, null, null));
 
             mallComment.setUserData(userServerService.getUserDataByUid(mallComment.getUid()));
         }
@@ -331,16 +348,19 @@ public class MallServerService {
         return mallComment;
     }
 
-    private List<String> makePictureList(String pictureListJson, String preUrl) {
+    private List<FileData> makeFileDataList(String pictureListJson, String preUrl) {
 
-        List<String> result = null;
+        List<FileData> result = null;
 
         if (StringUtil.isNotBlank(pictureListJson)) {
-            result = new ArrayList<String>();
+            result = new ArrayList<FileData>();
+			FileData fileData = null;
 
             List<String> pictureList = JSON.parseArray(pictureListJson, String.class);
             for (String picture : pictureList) {
-                result.add(preUrl + picture);
+				fileData = new FileData();
+				fileData.setName(picture);
+				fileData.setUrl(preUrl + picture);
             }
 
         }
@@ -354,7 +374,7 @@ public class MallServerService {
     public void addMallReply(MallReply mallReply) {
 
     	if (null == mallReply.getPictureListJson()) {
-			mallReply.setPictureListJson(makeListJson(mallReply.getPictureList()));
+			mallReply.setPictureListJson(makeFileDataListJson(mallReply.getFileDataList()));
 		}
 
         mallMapper.addMallReply(mallReply);
@@ -363,11 +383,29 @@ public class MallServerService {
     public void updateMallReply(MallReply mallReply) {
 
 		if (null == mallReply.getPictureListJson()) {
-        	mallReply.setPictureListJson(makeListJson(mallReply.getPictureList()));
+        	mallReply.setPictureListJson(makeFileDataListJson(mallReply.getFileDataList()));
 		}
 
         mallMapper.updateMallReply(mallReply);
     }
+
+	public MallReply getMallReplyByReplyId(Long replyId) {
+    	MallReply mallReply = mallMapper.getMallReplyByReplyId(replyId);
+
+    	if (null != mallReply) {
+    		MallItem mallItem = getMallItemByItemId(mallReply.getItemId());
+    		if (null != mallItem) {
+				mallReply.setToUserData(userServerService.getUserDataByUid(mallReply.getToUid()));
+
+				mallReply.setFromUserData(userServerService.getUserDataByUid(mallReply.getFromUid()));
+
+				String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "reply");
+				mallReply.setFileDataList(makeFileDataList(mallReply.getPictureListJson(), preUrl));
+			}
+		}
+
+		return mallReply;
+	}
 
     public List<MallReply> getMallReplyListByCommentId(Long commentId, Long fromUid, Integer status, Integer start, Integer count) {
 
@@ -389,7 +427,7 @@ public class MallServerService {
                     mallReply.setFromUserData(userServerService.getUserDataByUid(mallReply.getFromUid()));
 
                     String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "reply");
-                    mallReply.setPictureList(makePictureList(mallReply.getPictureListJson(), preUrl));
+                    mallReply.setFileDataList(makeFileDataList(mallReply.getPictureListJson(), preUrl));
                 }
 
             }
@@ -409,7 +447,7 @@ public class MallServerService {
     public void addMallCart(MallCart mallCart) {
 
 		if (null == mallCart.getSkuListJson()) {
-			mallCart.setSkuListJson(makeListJson(mallCart.getSkuList()));
+			mallCart.setSkuListJson(makeSkuListJson(mallCart.getSkuList()));
 		}
 
         mallMapper.addMallCart(mallCart);
@@ -418,7 +456,7 @@ public class MallServerService {
     public void updateMallCart(MallCart mallCart) {
 
     	if (null == mallCart.getSkuListJson()) {
-			mallCart.setSkuListJson(makeListJson(mallCart.getSkuList()));
+			mallCart.setSkuListJson(makeSkuListJson(mallCart.getSkuList()));
 		}
 
         mallMapper.updateMallCart(mallCart);
@@ -594,7 +632,7 @@ public class MallServerService {
 	public void addMallReturnGoods(MallReturnGoods mallReturnGoods) {
 
 		if (null == mallReturnGoods.getPictureListJson()) {
-			mallReturnGoods.setPictureListJson(makeListJson(mallReturnGoods.getPictureList()));
+			mallReturnGoods.setPictureListJson(makeFileDataListJson(mallReturnGoods.getFileDataList()));
 		}
 
 		mallMapper.addMallReturnGoods(mallReturnGoods);
@@ -603,10 +641,24 @@ public class MallServerService {
 	public void updateMallReturnGoods(MallReturnGoods mallReturnGoods) {
 
 		if (null == mallReturnGoods.getPictureListJson()) {
-			mallReturnGoods.setPictureListJson(makeListJson(mallReturnGoods.getPictureList()));
+			mallReturnGoods.setPictureListJson(makeFileDataListJson(mallReturnGoods.getFileDataList()));
 		}
 
 		mallMapper.updateMallReturnGoods(mallReturnGoods);
+	}
+
+	public MallReturnGoods getMallReturnGoodsById(Integer id) {
+		MallReturnGoods mallReturnGoods = mallMapper.getMallReturnGoodsById(id);
+
+		if (null == mallReturnGoods) {
+			MallItem mallItem = getMallItemByItemId(mallReturnGoods.getItemId());
+			if (null != mallItem) {
+				String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "returnGoods");
+				mallReturnGoods.setFileDataList(makeFileDataList(mallReturnGoods.getPictureListJson(), preUrl));
+			}
+		}
+
+		return mallReturnGoods;
 	}
 
 	public List<MallReturnGoods> getMallReturnGoodsListByUid(Long uid, Integer status, Integer start, Integer count) {
@@ -622,7 +674,7 @@ public class MallServerService {
 					MallItem mallItem = getMallItemByItemId(mallReturnGoods.getItemId());
 					if (null != mallItem) {
 						String preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "returnGoods");
-						mallReturnGoods.setPictureList(makePictureList(mallReturnGoods.getPictureListJson(), preUrl));
+						mallReturnGoods.setFileDataList(makeFileDataList(mallReturnGoods.getPictureListJson(), preUrl));
 					}
 
 				}
@@ -652,7 +704,7 @@ public class MallServerService {
 		for (MallGoods mallGoods : mallGoodsList) {
 			if (null != mallGoods) {
 				oid = mallGoods.getOid();
-				mallGoods.setSkuListJson(makeListJson(mallGoods.getSkuList()));
+				mallGoods.setSkuListJson(makeSkuListJson(mallGoods.getSkuList()));
 				mallMapper.addMallGoods(mallGoods);
 				gidList.add(mallGoods.getGid());
 			}
@@ -674,7 +726,7 @@ public class MallServerService {
 
 		for (MallGoods mallGoods : mallGoodsList) {
 			if (null != mallGoods) {
-				mallGoods.setSkuListJson(makeListJson(mallGoods.getSkuList()));
+				mallGoods.setSkuListJson(makeSkuListJson(mallGoods.getSkuList()));
 				mallMapper.updateMallGoods(mallGoods);
 			}
 		}
@@ -752,5 +804,4 @@ public class MallServerService {
 	public Integer getMallSetListCount(Integer status) {
 		return mallMapper.getMallSetListCount(status);
 	}
-
 }

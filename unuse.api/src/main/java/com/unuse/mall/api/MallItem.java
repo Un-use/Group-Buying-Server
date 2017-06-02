@@ -1,5 +1,7 @@
 package com.unuse.mall.api;
 
+import com.unuse.file.api.FileData;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -53,9 +55,9 @@ public class MallItem implements Serializable {
 
     /** generate data **/
 
-	private List<String> mainPictureList; // 商品图片
+	private List<FileData> mainFileDataList; // 商品图片
 
-	private List<String> detailPictureList; // 商品图片
+	private List<FileData> detailFileDataList; // 商品图片
 
 	private List<MallSkuInfo> skuList; // 商品规格
 
@@ -212,20 +214,20 @@ public class MallItem implements Serializable {
 		this.updateTime = updateTime;
 	}
 
-	public List<String> getMainPictureList() {
-		return mainPictureList;
+	public List<FileData> getMainFileDataList() {
+		return mainFileDataList;
 	}
 
-	public void setMainPictureList(List<String> mainPictureList) {
-		this.mainPictureList = mainPictureList;
+	public void setMainFileDataList(List<FileData> mainFileDataList) {
+		this.mainFileDataList = mainFileDataList;
 	}
 
-	public List<String> getDetailPictureList() {
-		return detailPictureList;
+	public List<FileData> getDetailFileDataList() {
+		return detailFileDataList;
 	}
 
-	public void setDetailPictureList(List<String> detailPictureList) {
-		this.detailPictureList = detailPictureList;
+	public void setDetailFileDataList(List<FileData> detailFileDataList) {
+		this.detailFileDataList = detailFileDataList;
 	}
 
 	public List<MallSkuInfo> getSkuList() {

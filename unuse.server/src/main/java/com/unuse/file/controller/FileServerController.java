@@ -2,6 +2,7 @@ package com.unuse.file.controller;
 
 import com.unuse.common.BaseController;
 import com.unuse.common.ResponseResult;
+import com.unuse.file.api.FileDataListResult;
 import com.unuse.file.api.IFile;
 import com.unuse.file.service.FileServerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,12 +28,14 @@ public class FileServerController extends BaseController {
 
     @RequestMapping(value = IFile.API_PATH_FILE_SINGLE_UPLOAD, method = RequestMethod.POST)
     @ResponseBody
-    public ResponseResult uploadSingleFile(
+    public FileDataListResult uploadSingleFile(
             @RequestParam("file") MultipartFile file,
             @RequestParam("type") Integer type,
             @RequestParam("id") Long id,
             @RequestParam(value = "isMain", required = false) Boolean isMain,
             @RequestParam(value = "isZip", required = false) Boolean isZip) throws Exception {
+
+        FileDataListResult result = new FileDataListResult();
 
         if (null == isZip) {
             isZip = false;
@@ -46,18 +49,20 @@ public class FileServerController extends BaseController {
 
         fileServerService.saveFile(file, file.getOriginalFilename(), type, id, isZip);
 
-        fileServerService.updateItemFile(id, type, isMain);
+        result.setFileDataList(fileServerService.getFileDataList(id, type, isMain));
 
-        return ResponseResult.retOK();
+        return result;
     }
 
     @RequestMapping(value = IFile.API_PATH_FILE_MULTIPLE_UPLOAD, method = RequestMethod.POST)
     @ResponseBody
-    public ResponseResult uploadMultipleFile(
+    public FileDataListResult uploadMultipleFile(
             @RequestParam("files") MultipartFile[] files,
             @RequestParam("type") Integer type,
             @RequestParam("id") Long id,
 			@RequestParam(value = "isMain", required = false) Boolean isMain) throws Exception {
+
+        FileDataListResult result = new FileDataListResult();
 
 		if (null == isMain) {
 			isMain = false;
@@ -74,9 +79,9 @@ public class FileServerController extends BaseController {
             fileServerService.saveSingleFile(file, file.getOriginalFilename(), type, id, now);
         }
 
-        fileServerService.updateItemFile(id, type, isMain);
+        result.setFileDataList(fileServerService.getFileDataList(id, type, isMain));
 
-        return ResponseResult.retOK();
+        return result;
     }
 
 }

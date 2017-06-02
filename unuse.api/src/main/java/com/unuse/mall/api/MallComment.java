@@ -1,5 +1,6 @@
 package com.unuse.mall.api;
 
+import com.unuse.file.api.FileData;
 import com.unuse.user.api.UserData;
 
 import java.io.Serializable;
@@ -39,7 +40,7 @@ public class MallComment implements Serializable {
 
     private UserData userData;
 
-    private List<String> pictureList;
+    private List<FileData> fileDataList;
 
     private List<MallReply> replyList;
 
@@ -131,12 +132,12 @@ public class MallComment implements Serializable {
         this.userData = userData;
     }
 
-    public List<String> getPictureList() {
-        return pictureList;
+    public List<FileData> getFileDataList() {
+        return fileDataList;
     }
 
-    public void setPictureList(List<String> pictureList) {
-        this.pictureList = pictureList;
+    public void setFileDataList(List<FileData> fileDataList) {
+        this.fileDataList = fileDataList;
     }
 
     public List<MallReply> getReplyList() {

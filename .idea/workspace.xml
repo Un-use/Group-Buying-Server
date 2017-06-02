@@ -29,88 +29,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MallServerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/controller/MallServerController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="106" column="45" lean-forward="true" selection-start-line="106" selection-start-column="45" selection-end-line="106" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MallServerService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/service/MallServerService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="124" column="41" lean-forward="true" selection-start-line="124" selection-start-column="41" selection-end-line="124" selection-end-column="41" />
-              <folding>
-                <element signature="e#2088#2102#0" expanded="true" />
-                <element signature="e#2164#2187#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mallItemMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallItemMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="129" column="117" lean-forward="true" selection-start-line="129" selection-start-column="117" selection-end-line="129" selection-end-column="117" />
-              <folding>
-                <marker date="1496306123090" expanded="true" signature="3713:3808" ph="SELECT FROM mall_item" />
-                <marker date="1496306123090" expanded="true" signature="3875:4300" ph="INSERT INTO mall_item... " />
-                <marker date="1496306123090" expanded="true" signature="4370:5547" ph="UPDATE mall_... " />
-                <marker date="1496306123090" expanded="true" signature="5597:5874" ph="UPDATE mall_... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mallCategoryMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallCategoryMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="35" />
-              <folding>
-                <marker date="1496195802800" expanded="true" signature="1272:1386" ph="SELECT FROM mall_category" />
-                <marker date="1496195802800" expanded="true" signature="1461:1639" ph="INSERT INTO mall_category... " />
-                <marker date="1496195802800" expanded="true" signature="1719:2073" ph="UPDATE mall_... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MallMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/mapper/MallMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1729">
-              <caret line="96" column="38" lean-forward="false" selection-start-line="96" selection-start-column="38" selection-end-line="96" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="jdbc" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/property/jdbc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="19">
+              <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MallCategory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallCategory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -137,6 +61,9 @@
       <find>getMallReplyListByCommentId</find>
       <find>getMallCategoryList</find>
       <find>addMallItem</find>
+      <find>makepic</find>
+      <find>getMallReplyByReplyId</find>
+      <find>mallMapper.getmallitembyitemid</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -147,15 +74,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallReturnGoods.java" />
-        <option value="$PROJECT_DIR$/../Company/qinbaobao/btime.webser/src/main/webapp/WEB-INF/log4j.properties" />
-        <option value="$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallGoods.java" />
-        <option value="$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/user/service/UserServerService.java" />
-        <option value="$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/user/mapper/UserMapper.java" />
-        <option value="$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/interceptor/ServerInterceptor.java" />
-        <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/userAddressMapper.xml" />
-        <option value="$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/IMall.java" />
-        <option value="$PROJECT_DIR$/unuse.util/pom.xml" />
         <option value="$PROJECT_DIR$/unuse.server/pom.xml" />
         <option value="$PROJECT_DIR$/unuse.console/pom.xml" />
         <option value="$PROJECT_DIR$/unuse.api/pom.xml" />
@@ -171,7 +89,6 @@
         <option value="$PROJECT_DIR$/unuse.server/src/test/com/unuse/diary/AuthTest.java" />
         <option value="$PROJECT_DIR$/unuse.server/src/test/com/unuse/diary/DiaryTest.java" />
         <option value="$PROJECT_DIR$/unuse.server/src/test/com/unuse/auth/AuthTest.java" />
-        <option value="$PROJECT_DIR$/unuse.server/src/test/com/unuse/mall/MallTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/diary/mapper/DiaryMapper.java" />
         <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/diaryMapper.xml" />
@@ -188,16 +105,26 @@
         <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/administratorMapper.xml" />
         <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallCategoryMapper.xml" />
         <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallGoodsMapper.xml" />
-        <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallReturnGoodsMapper.xml" />
         <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallCommentMapper.xml" />
-        <option value="$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/mapper/MallMapper.java" />
         <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallReplyMapper.xml" />
         <option value="$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallCategoryListResult.java" />
         <option value="$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/controller/MallServerController.java" />
         <option value="$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallCategory.java" />
-        <option value="$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/service/MallServerService.java" />
-        <option value="$PROJECT_DIR$/unuse.server/src/main/resources/property/jdbc" />
         <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallItemMapper.xml" />
+        <option value="$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/file/api/FileData.java" />
+        <option value="$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallReply.java" />
+        <option value="$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallComment.java" />
+        <option value="$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallItem.java" />
+        <option value="$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallReturnGoods.java" />
+        <option value="$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallReturnGoodsMapper.xml" />
+        <option value="$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/mapper/MallMapper.java" />
+        <option value="$PROJECT_DIR$/unuse.util/src/main/java/com/unuse/util/CommonUtil.java" />
+        <option value="$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/service/MallServerService.java" />
+        <option value="$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/file/api/FileDataListResult.java" />
+        <option value="$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/file/controller/FileServerController.java" />
+        <option value="$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/file/service/FileServerService.java" />
+        <option value="$PROJECT_DIR$/unuse.server/src/test/com/unuse/mall/MallTest.java" />
+        <option value="$PROJECT_DIR$/unuse.server/src/main/resources/property/jdbc" />
       </list>
     </option>
   </component>
@@ -617,7 +544,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mall" />
+              <option name="myItemId" value="file" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -651,45 +578,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mall" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Group-Buying-Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Group-Buying-Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="unuse.server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="unuse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mall" />
+              <option name="myItemId" value="file" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -793,6 +682,108 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-Buying-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-Buying-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unuse.api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unuse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-Buying-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-Buying-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unuse.api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unuse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-Buying-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Group-Buying-Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unuse.api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="unuse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane">
@@ -809,7 +800,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="js-jscs-nodeInterpreter" value="D:\nodejs\node.exe" />
-    <property name="SearchEverywhereHistoryKey" value="mallitemma&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallItemMapper.xml&#10;mallcategorymapp&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCategoryMapper.xml&#10;mallrepl&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallReplyMapper.xml&#10;MallComm&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCommentMapper.xml&#10;mallmapper&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCommentMapper.xml&#10;MallItem&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallItemMapper.xml&#10;mallsetma&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallSetMapper.xml&#10;mallc&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCategoryMapper.xml&#10;MallCategoryma&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCategoryMapper.xml&#10;mallitemmapper&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallItemMapper.xml&#10;Usercont&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/java/com/unuse/user/controller/UserServerController.java&#10;http&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;httpse&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;https&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;diary&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/java/com/unuse/diary/mapper/DiaryMapper.java&#10;diarymap&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/diaryMapper.xml&#10;diarymapp&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/diaryMapper.xml&#10;HttpService&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;Imall&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.api/src/main/java/com/unuse/mall/api/IMall.java&#10;IMall&#9;PSI&#9;JAVA://com.unuse.mall.api.IMall&#10;usermapper&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.server/src/main/resources/mapper/userAddressMapper.xml&#10;responseresu&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.api/src/main/java/com/unuse/common/ResponseResult.java&#10;userData&#9;PSI&#9;JAVA://com.unuse.user.api.UserData&#10;authte&#9;PSI&#9;JAVA://com.unuse.auth.AuthTest&#10;useraddr&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.server/src/main/resources/mapper/userAddressMapper.xml&#10;mallgoodsmapp&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.server/src/main/resources/mapper/mallGoodsMapper.xml&#10;sprin&#9;FILE&#9;file:///Users/unuse/Desktop/GroupBuying/Group-Buying/unuse.server/src/main/resources/config/spring-mvc.xml&#10;spring&#9;FILE&#9;file:///Users/unuse/Desktop/GroupBuying/Group-Buying/unuse.server/src/main/resources/config/spring-common.xml" />
+    <property name="SearchEverywhereHistoryKey" value="FileS&#9;PSI&#9;JAVA://com.unuse.file.controller.FileServerController&#10;MallReturng&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallReturnGoodsMapper.xml&#10;MallRepl&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallReplyMapper.xml&#10;mallitemma&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallItemMapper.xml&#10;mallcategorymapp&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCategoryMapper.xml&#10;mallrepl&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallReplyMapper.xml&#10;MallComm&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCommentMapper.xml&#10;mallmapper&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCommentMapper.xml&#10;MallItem&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallItemMapper.xml&#10;mallsetma&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallSetMapper.xml&#10;mallc&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCategoryMapper.xml&#10;MallCategoryma&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallCategoryMapper.xml&#10;mallitemmapper&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/mallItemMapper.xml&#10;Usercont&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/java/com/unuse/user/controller/UserServerController.java&#10;http&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;httpse&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;https&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;diary&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/java/com/unuse/diary/mapper/DiaryMapper.java&#10;diarymap&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/diaryMapper.xml&#10;diarymapp&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.server/src/main/resources/mapper/diaryMapper.xml&#10;HttpService&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying-Server/unuse.util/src/main/java/com/unuse/util/HttpService.java&#10;Imall&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.api/src/main/java/com/unuse/mall/api/IMall.java&#10;IMall&#9;PSI&#9;JAVA://com.unuse.mall.api.IMall&#10;usermapper&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.server/src/main/resources/mapper/userAddressMapper.xml&#10;responseresu&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.api/src/main/java/com/unuse/common/ResponseResult.java&#10;userData&#9;PSI&#9;JAVA://com.unuse.user.api.UserData&#10;authte&#9;PSI&#9;JAVA://com.unuse.auth.AuthTest&#10;useraddr&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.server/src/main/resources/mapper/userAddressMapper.xml&#10;mallgoodsmapp&#9;FILE&#9;file://C:/Users/Administrator/Desktop/Profile/Group-Buying/unuse.server/src/main/resources/mapper/mallGoodsMapper.xml&#10;sprin&#9;FILE&#9;file:///Users/unuse/Desktop/GroupBuying/Group-Buying/unuse.server/src/main/resources/config/spring-mvc.xml&#10;spring&#9;FILE&#9;file:///Users/unuse/Desktop/GroupBuying/Group-Buying/unuse.server/src/main/resources/config/spring-common.xml" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -1548,7 +1539,8 @@
       <workItem from="1496195573602" duration="628000" />
       <workItem from="1496288157984" duration="483000" />
       <workItem from="1496295512349" duration="236000" />
-      <workItem from="1496300314034" duration="2345000" />
+      <workItem from="1496300314034" duration="2984000" />
+      <workItem from="1496370175486" duration="3814000" />
     </task>
     <task id="LOCAL-00001">
       <created>1484284868031</created>
@@ -1887,7 +1879,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="302761000" />
+    <option name="totallyTimeSpent" value="307214000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1898,32 +1890,32 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7770563" sideWeight="0.5136157" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3275862" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918033" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983607" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983607" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24983607" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24983607" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3487621" sideWeight="0.48638427" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34846884" sideWeight="0.48638427" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852387" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34002113" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852387" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3229279" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.344245" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852387" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3062302" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3062302" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1953125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3401507" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1967,145 +1959,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/unuse.server/src/test/com/unuse/mall/MallTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="435" column="39" lean-forward="false" selection-start-line="435" selection-start-column="39" selection-end-line="435" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="34" lean-forward="false" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/diary/api/Diary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="36" column="26" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/diary/mapper/DiaryMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/auth/controller/AuthServerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.server/src/test/com/unuse/diary/DiaryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.6/commons-lang-2.6.jar!/org/apache/commons/lang/StringUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/squareup/okio/okio/1.11.0/okio-1.11.0.jar!/okio/BufferedSource.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="75" column="11" lean-forward="false" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/3.5.0/okhttp-3.5.0.jar!/okhttp3/internal/Util.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="338" column="26" lean-forward="true" selection-start-line="338" selection-start-column="26" selection-end-line="338" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/squareup/okio/okio/1.11.0/okio-1.11.0.jar!/okio/RealBufferedSource.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="417" column="20" lean-forward="true" selection-start-line="417" selection-start-column="20" selection-end-line="417" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/3.5.0/okhttp-3.5.0.jar!/okhttp3/ResponseBody.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.util/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-456">
-          <caret line="3" column="39" lean-forward="false" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/diary/controller/DiaryServerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="42" column="34" lean-forward="false" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/diary/service/DiaryServerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="35" column="34" lean-forward="false" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.util/src/main/java/com/unuse/util/StringUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="12" column="3" lean-forward="false" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.util/src/main/java/com/unuse/util/MD5Encryption.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="12" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.util/src/main/java/com/unuse/util/DateUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.util/src/main/java/com/unuse/util/FileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.2.5.RELEASE/spring-core-4.2.5.RELEASE.jar!/org/springframework/util/StringUtils.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-418">
@@ -2263,17 +2116,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallReturnGoodsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="50" column="71" lean-forward="true" selection-start-line="50" selection-start-column="71" selection-end-line="50" selection-end-column="71" />
-          <folding>
-            <marker date="1496195935417" expanded="true" signature="1739:1994" ph="INSERT INTO mall_return_goods... " />
-            <marker date="1496195935417" expanded="true" signature="2079:2448" ph="UPDATE mall_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallSellerMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2337,46 +2179,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallReplyMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="48" column="13" lean-forward="false" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-          <folding>
-            <marker date="1496288564067" expanded="true" signature="1606:1797" ph="SELECT COUNT... mall_reply" />
-            <marker date="1496288564067" expanded="true" signature="1880:1979" ph="SELECT FROM mall_reply" />
-            <marker date="1496288564067" expanded="true" signature="2048:2308" ph="INSERT INTO mall_reply... " />
-            <marker date="1496288564067" expanded="true" signature="2380:2699" ph="UPDATE mall_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/mapper/MallMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1729">
-          <caret line="96" column="38" lean-forward="false" selection-start-line="96" selection-start-column="38" selection-end-line="96" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallReply.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallCategoryListResult.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="24" column="49" lean-forward="false" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-          <folding>
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#689#690#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2392,39 +2198,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallCategory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/controller/MallServerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="106" column="45" lean-forward="true" selection-start-line="106" selection-start-column="45" selection-end-line="106" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/service/MallServerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="124" column="41" lean-forward="true" selection-start-line="124" selection-start-column="41" selection-end-line="124" selection-end-column="41" />
-          <folding>
-            <element signature="e#2088#2102#0" expanded="true" />
-            <element signature="e#2164#2187#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallItemMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="129" column="117" lean-forward="true" selection-start-line="129" selection-start-column="117" selection-end-line="129" selection-end-column="117" />
+        <state relative-caret-position="2451">
+          <caret line="129" column="117" lean-forward="false" selection-start-line="129" selection-start-column="117" selection-end-line="129" selection-end-column="117" />
           <folding>
             <marker date="1496306123090" expanded="true" signature="3713:3808" ph="SELECT FROM mall_item" />
             <marker date="1496306123090" expanded="true" signature="3875:4300" ph="INSERT INTO mall_item... " />
@@ -2434,10 +2211,251 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/property/jdbc">
+    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/file/api/FileData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="21" />
+          <folding>
+            <element signature="e#229#230#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
+            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#384#385#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/config/service/ConfigServerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="100" column="16" lean-forward="false" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="16" />
+          <folding>
+            <element signature="e#2467#2468#0" expanded="true" />
+            <element signature="e#2517#2518#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.util/src/main/java/com/unuse/util/StringUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="122" column="25" lean-forward="false" selection-start-line="122" selection-start-column="25" selection-end-line="122" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallCart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-76">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallGoods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-133">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-76">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallSeller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-19">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-19">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="116" column="16" lean-forward="false" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="16" />
+          <folding>
+            <element signature="e#2035#2036#0" expanded="true" />
+            <element signature="e#2088#2089#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallReplyMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="51" column="37" lean-forward="false" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="37" />
+          <folding>
+            <marker date="1496288564067" expanded="true" signature="1606:1797" ph="SELECT COUNT... mall_reply" />
+            <marker date="1496288564067" expanded="true" signature="1880:1979" ph="SELECT FROM mall_reply" />
+            <marker date="1496288564067" expanded="true" signature="2048:2308" ph="INSERT INTO mall_reply... " />
+            <marker date="1496288564067" expanded="true" signature="2380:2699" ph="UPDATE mall_... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallReply.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/mapper/mallReturnGoodsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding>
+            <marker date="1496373388933" expanded="true" signature="1182:1285" ph="SELECT FROM mall_return_goods" />
+            <marker date="1496373388933" expanded="true" signature="1932:2187" ph="INSERT INTO mall_return_goods... " />
+            <marker date="1496373388933" expanded="true" signature="2272:2641" ph="UPDATE mall_... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/mapper/MallMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="149" column="36" lean-forward="false" selection-start-line="149" selection-start-column="36" selection-end-line="149" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallComment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="146" column="25" lean-forward="true" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
+          <folding>
+            <element signature="e#2724#2725#0" expanded="true" />
+            <element signature="e#2766#2767#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/mall/api/MallReturnGoods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-19">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.util/src/main/java/com/unuse/util/CommonUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/user/service/UserServerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="50" column="65" lean-forward="false" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/common/ResponseResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.api/src/main/java/com/unuse/file/api/FileDataListResult.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#280#281#0" expanded="true" />
+            <element signature="e#315#316#0" expanded="true" />
+            <element signature="e#379#380#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/controller/MallServerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="258" column="74" lean-forward="false" selection-start-line="258" selection-start-column="74" selection-end-line="258" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/mall/service/MallServerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="350" column="43" lean-forward="false" selection-start-line="350" selection-start-column="27" selection-end-line="350" selection-end-column="43" />
+          <folding>
+            <element signature="e#3647#3655#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/file/controller/FileServerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="81" column="53" lean-forward="true" selection-start-line="81" selection-start-column="53" selection-end-line="81" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/java/com/unuse/file/service/FileServerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#1361#1362#0" expanded="true" />
+            <element signature="e#1394#1395#0" expanded="true" />
+            <element signature="e#6972#6982#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.server/src/test/com/unuse/mall/MallTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="406" column="0" lean-forward="true" selection-start-line="406" selection-start-column="0" selection-end-line="406" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unuse.server/src/main/resources/property/jdbc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
           <folding />
         </state>
       </provider>

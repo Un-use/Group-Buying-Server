@@ -147,6 +147,8 @@ public interface MallMapper {
 
     void updateMallReturnGoods(MallReturnGoods mallReturnGoods);
 
+    MallReturnGoods getMallReturnGoodsById(@Param("id") Integer id);
+
     List<MallReturnGoods> getMallReturnGoodsListByUid(@Param("uid") Long uid,
                                                       @Param("status") Integer status,
                                                       @Param("start") Integer start,

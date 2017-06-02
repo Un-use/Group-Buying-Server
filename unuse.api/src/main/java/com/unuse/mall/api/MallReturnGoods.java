@@ -1,5 +1,7 @@
 package com.unuse.mall.api;
 
+import com.unuse.file.api.FileData;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -35,7 +37,7 @@ public class MallReturnGoods implements Serializable {
 
 	/** generate data **/
 
-	private List<String> pictureList;
+	private List<FileData> fileDataList;
 
 	private MallOrder mallOrder;
 
@@ -119,12 +121,12 @@ public class MallReturnGoods implements Serializable {
 		this.updateTime = updateTime;
 	}
 
-	public List<String> getPictureList() {
-		return pictureList;
+	public List<FileData> getFileDataList() {
+		return fileDataList;
 	}
 
-	public void setPictureList(List<String> pictureList) {
-		this.pictureList = pictureList;
+	public void setFileDataList(List<FileData> fileDataList) {
+		this.fileDataList = fileDataList;
 	}
 
 	public MallOrder getMallOrder() {

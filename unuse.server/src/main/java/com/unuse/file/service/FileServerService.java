@@ -3,6 +3,7 @@ package com.unuse.file.service;
 import com.unuse.common.ResponseException;
 import com.unuse.common.ResponseResult;
 import com.unuse.config.service.ConfigServerService;
+import com.unuse.file.api.FileData;
 import com.unuse.file.api.IFile;
 import com.unuse.mall.api.MallComment;
 import com.unuse.mall.api.MallItem;
@@ -12,6 +13,7 @@ import com.unuse.mall.service.MallServerService;
 import com.unuse.user.api.User;
 import com.unuse.user.service.UserServerService;
 import com.unuse.util.FileUtil;
+import com.unuse.util.StringUtil;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,9 +40,6 @@ public class FileServerService {
 
     @Autowired
     private MallServerService mallServerService;
-
-    @Autowired
-    private UserServerService userServerService;
 
 
     private List<String> fileNames = new ArrayList<String>(); // 存储保存到服务器的文件名
@@ -205,53 +204,49 @@ public class FileServerService {
         return subFolder;
     }
 
-    public void updateItemFile(Long id, Integer type, Boolean isMain) {
+    public List<FileData> getFileDataList(Long id, Integer type, Boolean isMain) {
         if (null == fileNames || fileNames.isEmpty()) {
-            return;
+            return null;
         }
+
+        String preUrl = null;
+        MallItem mallItem = null;
+        List<FileData> fileDataList = new ArrayList<FileData>();
+        FileData fileData = null;
 
         switch (type) {
             case IFile.FileSource.ITEM:
-                MallItem mallItem = new MallItem();
-                mallItem.setItemId(id);
-                if (isMain) {
-                    mallItem.setMainPictureList(fileNames);
-                } else {
-                    mallItem.setDetailPictureList(fileNames);
-                }
-
-                mallServerService.updateMallItem(mallItem);
+                mallItem = mallServerService.getMallItemByItemId(id);
+                preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), id.toString(), null);
                 break;
             case IFile.FileSource.ITEM_COMMENT:
-                MallComment mallComment = new MallComment();
-                mallComment.setCommentId(id);
-                mallComment.setPictureList(fileNames);
-
-                mallServerService.updateMallComment(mallComment);
+                MallComment mallComment = mallServerService.getMallCommentByCommentId(id);
+                mallItem = mallServerService.getMallItemByItemId(mallComment.getItemId());
+                preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "comment");
                 break;
             case IFile.FileSource.ITEM_REPLY:
-                MallReply mallReply = new MallReply();
-                mallReply.setReplyId(id);
-                mallReply.setPictureList(fileNames);
-
-                mallServerService.updateMallReply(mallReply);
+                MallReply mallReply = mallServerService.getMallReplyByReplyId(id);
+                mallItem = mallServerService.getMallItemByItemId(mallReply.getItemId());
+                preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "reply");
                 break;
 			case IFile.FileSource.ITEM_RETURN_GOODS:
-				MallReturnGoods mallReturnGoods = new MallReturnGoods();
-				mallReturnGoods.setId(id.intValue());
-				mallReturnGoods.setPictureList(fileNames);
-
-				mallServerService.updateMallReturnGoods(mallReturnGoods);
+				MallReturnGoods mallReturnGoods = mallServerService.getMallReturnGoodsById(id.intValue());
+				mallItem = mallServerService.getMallItemByItemId(mallReturnGoods.getItemId());
+                preUrl = StringUtil.makePicturePreUrl(configServerService.getItemURL(), mallItem.getSecret(), mallItem.getItemId().toString(), "returnGoods");
 				break;
             case IFile.FileSource.USER:
-                User user = new User();
-                user.setUid(id);
-                user.setAvatar(fileNames.get(0));
-
-				userServerService.updateUser(user);
+                preUrl = StringUtil.makePicturePreUrl(configServerService.getUserURL(), "u", id.toString(), null);
                 break;
         }
 
+        for (String fileName : fileNames) {
+            fileData = new FileData();
+            fileData.setName(fileName);
+            fileData.setUrl(preUrl + fileName);
+        }
+
         clearFileNames();
+
+        return fileDataList;
     }
 }

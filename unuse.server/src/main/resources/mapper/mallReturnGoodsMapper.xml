@@ -19,6 +19,13 @@
         `id`, `uid`, `oid`, `itemId`, `reason`, `des`, `pictureListJson`, `status`, `createTime`, `updateTime`
     </sql>
 
+	<select id="getMallReturnGoodsById" resultMap="MallReturnGoodsResultMap">
+		SELECT
+		<include refid="Mall_Return_Goods_Column_List"/>
+		FROM mall_return_goods
+		WHERE `id` = #{id}
+	</select>
+
 	<select id="getMallReturnGoodsListByUid" resultMap="MallReturnGoodsResultMap">
 		SELECT
 		<include refid="Mall_Return_Goods_Column_List"/>

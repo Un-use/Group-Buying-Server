@@ -71,10 +71,10 @@ public class MallTest extends BaseTest{
 		startUnit();
 
         MallCategory category = new MallCategory();
-        category.setCid(2);
+        category.setValue(2);
         category.setLevel(1);
         category.setParentCid(0);
-        category.setTitle("裤子");
+        category.setLabel("裤子");
         category.setStatus(0);
 
         ResponseResult result = httpService.runService(category, IMall.API_PATH_MALL_CATEGORY_UPDATE, ResponseResult.class);
@@ -137,11 +137,6 @@ public class MallTest extends BaseTest{
 
 		mallItem.setSkuList(skuInfos);
 
-        List<String> pictureList = new ArrayList<String>();
-        pictureList.add("11");
-        pictureList.add("22");
-		mallItem.setMainPictureList(pictureList);
-
         ResponseResult result = httpService.runService(mallItem, IMall.API_PATH_MALL_ITEM_UPDATE, ResponseResult.class);
 
         Assert.assertTrue(result.getResult() == ResponseResult.RES_OK);
@@ -173,11 +168,6 @@ public class MallTest extends BaseTest{
         mallComment.setUid(1L);
         mallComment.setStar(1);
         mallComment.setStatus(1);
-
-        List<String> list = new ArrayList<String>();
-        list.add("111");
-        list.add("222");
-        mallComment.setPictureList(list);
 
         ResponseResult result = httpService.runService(mallComment, IMall.API_PATH_MALL_ITEM_COMMENT_UPDATE, ResponseResult.class);
 
@@ -211,11 +201,6 @@ public class MallTest extends BaseTest{
         reply.setItemId(1L);
         reply.setToUid(1L);
         reply.setStatus(1);
-
-        List<String> list = new ArrayList<String>();
-        list.add("1111");
-        list.add("2221");
-        reply.setPictureList(list);
 
         ResponseResult result = httpService.runService(reply, IMall.API_PATH_MALL_ITEM_REPLY_UPDATE, ResponseResult.class);
 
@@ -329,11 +314,6 @@ public class MallTest extends BaseTest{
 		mallReturnGoods.setReason(2);
 		mallReturnGoods.setStatus(1);
 		mallReturnGoods.setDes("aaaaa");
-
-		List<String> list = new ArrayList<String>();
-		list.add("11111");
-		list.add("22211");
-		mallReturnGoods.setPictureList(list);
 
 		ResponseResult result = httpService.runService(mallReturnGoods, IMall.API_PATH_MALL_RETURN_GOODS_UPDATE, ResponseResult.class);
 

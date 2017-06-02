@@ -1,5 +1,6 @@
 package com.unuse.mall.api;
 
+import com.unuse.file.api.FileData;
 import com.unuse.user.api.UserData;
 
 import java.io.Serializable;
@@ -36,7 +37,7 @@ public class MallReply implements Serializable {
 
     /** generate data **/
 
-    private List<String> pictureList;
+    private List<FileData> fileDataList;
 
     private UserData toUserData;
 
@@ -138,11 +139,11 @@ public class MallReply implements Serializable {
         this.fromUserData = fromUserData;
     }
 
-    public List<String> getPictureList() {
-        return pictureList;
+    public List<FileData> getFileDataList() {
+        return fileDataList;
     }
 
-    public void setPictureList(List<String> pictureList) {
-        this.pictureList = pictureList;
+    public void setFileDataList(List<FileData> fileDataList) {
+        this.fileDataList = fileDataList;
     }
 }
