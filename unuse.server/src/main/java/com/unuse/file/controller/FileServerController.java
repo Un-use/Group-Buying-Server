@@ -31,8 +31,6 @@ public class FileServerController extends BaseController {
     public FileDataListResult uploadSingleFile(
             @RequestParam("file") MultipartFile file,
             @RequestParam("type") Integer type,
-            @RequestParam("id") Long id,
-            @RequestParam(value = "isMain", required = false) Boolean isMain,
             @RequestParam(value = "isZip", required = false) Boolean isZip) throws Exception {
 
         FileDataListResult result = new FileDataListResult();
@@ -41,15 +39,11 @@ public class FileServerController extends BaseController {
             isZip = false;
         }
 
-        if (null == isMain) {
-			isMain = false;
-        }
-
         fileServerService.clearFileNames();
 
-        fileServerService.saveFile(file, file.getOriginalFilename(), type, id, isZip);
+        fileServerService.saveFile(file, file.getOriginalFilename(), type, isZip);
 
-        result.setFileDataList(fileServerService.getFileDataList(id, type, isMain));
+        result.setFileDataList(fileServerService.getFileDataList(type));
 
         return result;
     }
@@ -58,15 +52,9 @@ public class FileServerController extends BaseController {
     @ResponseBody
     public FileDataListResult uploadMultipleFile(
             @RequestParam("files") MultipartFile[] files,
-            @RequestParam("type") Integer type,
-            @RequestParam("id") Long id,
-			@RequestParam(value = "isMain", required = false) Boolean isMain) throws Exception {
+            @RequestParam("type") Integer type) throws Exception {
 
         FileDataListResult result = new FileDataListResult();
-
-		if (null == isMain) {
-			isMain = false;
-		}
 
         fileServerService.clearFileNames();
 
@@ -76,10 +64,10 @@ public class FileServerController extends BaseController {
                 continue;
             }
 
-            fileServerService.saveSingleFile(file, file.getOriginalFilename(), type, id, now);
+            fileServerService.saveSingleFile(file, file.getOriginalFilename(), type, now);
         }
 
-        result.setFileDataList(fileServerService.getFileDataList(id, type, isMain));
+        result.setFileDataList(fileServerService.getFileDataList(type));
 
         return result;
     }

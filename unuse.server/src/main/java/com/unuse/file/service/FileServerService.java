@@ -46,9 +46,9 @@ public class FileServerService {
         fileNames.clear();
     }
 
-    public void saveSingleFile(MultipartFile file, String fileName, Integer type, Long id, Date now) throws Exception {
+    public void saveSingleFile(MultipartFile file, String fileName, Integer type, Date now) throws Exception {
         String savePath = getSavePath(type);
-        String subFolder = getSubFolder(type, id);
+        String subFolder = getSubFolder(type);
 
         String filePath;
         if (null == subFolder) {
@@ -65,7 +65,7 @@ public class FileServerService {
         fileNames.add(String.format("%d_%s", now.getTime(), fileName));
     }
 
-    public void saveFile(MultipartFile file, String fileName, Integer type, Long id, Boolean isZip) throws Exception {
+    public void saveFile(MultipartFile file, String fileName, Integer type, Boolean isZip) throws Exception {
         Date now = new Date();
         String tempPath = getSavePath(IFile.FileSource.TEMP);
         String tempFile = String.format("%s/%d_%s", tempPath, now.getTime(), fileName);
@@ -79,9 +79,9 @@ public class FileServerService {
         try {
 
             if (isZip) {
-                saveZipFile(tempFile, tempFolder, type, id, now);
+                saveZipFile(tempFile, tempFolder, type, now);
             } else {
-                saveSingleFile(tempFile, fileName, type, id, now);
+                saveSingleFile(tempFile, fileName, type, now);
             }
 
         } catch (Exception e) {
@@ -95,15 +95,15 @@ public class FileServerService {
 
     }
 
-    private void saveZipFile(String filePath, String fileFolder, Integer type, Long id, Date now) throws Exception {
+    private void saveZipFile(String filePath, String fileFolder, Integer type, Date now) throws Exception {
         FileUtil.unZipFile(filePath, fileFolder);
 
-        saveFolderFile(fileFolder, type, id, now);
+        saveFolderFile(fileFolder, type, now);
 
         FileUtil.deleteAllFile(new File(fileFolder));
     }
 
-    private void saveFolderFile(String fileFolder, Integer type, Long id, Date now) throws Exception {
+    private void saveFolderFile(String fileFolder, Integer type, Date now) throws Exception {
 
         File file = new File(fileFolder);
 
@@ -115,21 +115,21 @@ public class FileServerService {
 
         for (File temp : files) {
             if (temp.isFile()) {
-                saveSingleFile(temp.getAbsolutePath(), temp.getName(), type, id, now);
+                saveSingleFile(temp.getAbsolutePath(), temp.getName(), type, now);
             } else if (temp.isDirectory()){
                 String childFolder = fileFolder + "/" + temp.getName();
-                saveFolderFile(childFolder, type, id, now);
+                saveFolderFile(childFolder, type, now);
             }
         }
 
     }
 
-    private void saveSingleFile(String filePath, String fileName, Integer type, Long id, Date now) throws Exception {
+    private void saveSingleFile(String filePath, String fileName, Integer type, Date now) throws Exception {
         File file = new File(filePath);
         FileInputStream fis = new FileInputStream(file);
 
         String savePath = getSavePath(type);
-        String subFolder = getSubFolder(type, id);
+        String subFolder = getSubFolder(type);
 
         String saveFilePath;
         if (null == subFolder) {
@@ -168,7 +168,7 @@ public class FileServerService {
         return savePath;
     }
 
-    private String getSubFolder(Integer type, Long id) {
+    private String getSubFolder(Integer type) {
         String subFolder = null;
 
         switch (type) {
@@ -190,7 +190,7 @@ public class FileServerService {
         return subFolder;
     }
 
-    public List<FileData> getFileDataList(Long id, Integer type, Boolean isMain) {
+    public List<FileData> getFileDataList(Integer type) {
         if (null == fileNames || fileNames.isEmpty()) {
             return null;
         }
