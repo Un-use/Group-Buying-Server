@@ -48,7 +48,7 @@ public class UserServerService {
 		User user = userMapper.getUserByUid(uid);
 
 		if (null != user) {
-			String avatar = makeUserAvatar(user.getUid(), user.getAvatar());
+			String avatar = makeUserAvatar(user.getAvatar());
 			user.setAvatar(avatar);
 		}
 
@@ -70,18 +70,18 @@ public class UserServerService {
 		User user = userMapper.getUserByPhone(phone);
 
 		if (null != user) {
-			String avatar = makeUserAvatar(user.getUid(), user.getAvatar());
+			String avatar = makeUserAvatar(user.getAvatar());
 			user.setAvatar(avatar);
 		}
 
 		return user;
 	}
 
-	private String makeUserAvatar(Long uid, String avatar) {
+	private String makeUserAvatar(String avatar) {
 		String result = null;
 
 		if (StringUtil.isNotBlank(avatar)) {
-			result = StringUtil.makePicturePreUrl(configServerService.getUserURL(), "u", uid.toString(), null) + avatar;
+			result = StringUtil.makePicturePreUrl(configServerService.getUserURL(), null, null, null) + avatar;
 		}
 
 		return result;

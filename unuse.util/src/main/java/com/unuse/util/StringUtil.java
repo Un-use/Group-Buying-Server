@@ -126,19 +126,19 @@ public class StringUtil extends StringUtils {
 		if (null != secret) {
 			pictureUrl.append("/");
 			pictureUrl.append(secret);
-		}
 
-		if (null != id) {
-			pictureUrl.append("_");
-			pictureUrl.append(id);
-			pictureUrl.append("/");
+			if (null != id) {
+				pictureUrl.append("_");
+				pictureUrl.append(id);
+			}
 		}
 
 		if (null != subPath) {
 			pictureUrl.append("/");
 			pictureUrl.append(subPath);
-			pictureUrl.append("/");
 		}
+
+		pictureUrl.append("/");
 
 		return pictureUrl.toString();
 	}
