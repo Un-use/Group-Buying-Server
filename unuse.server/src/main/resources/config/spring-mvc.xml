@@ -28,4 +28,6 @@
 		<property name="suffix" value=".jsp"/>
 	</bean>
 
+	<bean id="messageServer" lazy-init="false" class="com.unuse.message.server.MessageServer" init-method="startServer" destroy-method="stopServer"/>
+
 </beans>

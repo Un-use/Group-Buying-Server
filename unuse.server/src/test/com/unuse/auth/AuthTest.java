@@ -24,9 +24,9 @@ public class AuthTest extends BaseTest {
 //
         HashMap<String, Object> params = new HashMap<String, Object>();
         params.put("phone", "18857119716");
-        params.put("password", "123456");
+        params.put("password", "unuse");
 
-        UserDataResult result = httpService.runService(params, IUser.API_PATH_USER_REGISTER, UserDataResult.class, false);
+        UserDataResult result = httpService.runService(params, IAuth.API_PATH_AUTH_USER_CONFIRM, UserDataResult.class, false);
         Assert.assertTrue(result.getResult() == ResponseResult.RES_OK);
 
         endUnit();

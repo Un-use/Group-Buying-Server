@@ -24,6 +24,7 @@
 		<typeAlias alias="UserAddress" type="com.unuse.user.api.UserAddress"/>
 		<typeAlias alias="MallSet" type="com.unuse.mall.api.MallSet"/>
 		<typeAlias alias="Diary" type="com.unuse.diary.api.Diary"/>
+		<typeAlias alias="Message" type="com.unuse.message.api.Message"/>
 	</typeAliases>
 
 	<mappers>
@@ -44,6 +45,7 @@
 		<mapper resource="mapper/mallGoodsMapper.xml"/>
 		<mapper resource="mapper/mallSetMapper.xml"/>
 		<mapper resource="mapper/diaryMapper.xml"/>
+		<mapper resource="mapper/messageMapper.xml"/>
 	</mappers>
 
 </configuration>
