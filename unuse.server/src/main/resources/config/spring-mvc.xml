@@ -30,4 +30,6 @@
 
 	<bean id="messageServer" lazy-init="false" class="com.unuse.message.server.MessageServer" init-method="startServer" destroy-method="stopServer"/>
 
+	<bean id="tetrisServer" lazy-init="false" class="com.unuse.tetris.server.TetrisServer" init-method="startServer" destroy-method="stopServer"/>
+
 </beans>

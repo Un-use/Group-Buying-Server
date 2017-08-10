@@ -1,7 +1,7 @@
 jdbc.driver=com.mysql.jdbc.Driver
-jdbc.url=jdbc:mysql://www.***.cn
-jdbc.username=root
-jdbc.password=123456
+jdbc.url=jdbc:mysql://www.unuseshared.cn:3306/unuse_graduation
+jdbc.username=unuse
+jdbc.password=unuseshare
 
 initialSize=2
 maxActive=20
